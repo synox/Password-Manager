@@ -11,7 +11,6 @@ $app->post('/password/edit-ajax', function () use ($app,$fpdo) {
 			$query = $query->set($field, $value);
 		}
 	}
-
 	if(!$query->execute()) {
 		$app->response->setStatus(400);
 	}
@@ -27,15 +26,12 @@ $app->get('/password/:id', function ($account_id) use ($app, $fpdo) {
 })->name('password-detail');
 
 
+
 $app->get('/password', function () use ($app,$fpdo) {
 	$accounts =  $fpdo->from('account')->where('user_id', 1)->orderBy('title')->fetchAll();
 
     $app->render('list.html', array('accounts' =>  $accounts));
 })->name('password-list');
-
-
-
-
 
 
 ?>

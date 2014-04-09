@@ -81,13 +81,16 @@ class __TwigTemplate_9d09fbc855fee79b7c54cb5b58a18c43dabcfeda6597e90a4723921ddf8
   <div class=\"col-md-2\">
     <a class=\"btn btn-default\" href=\"#\" id=\"view_password\" role=\"button\">View password &raquo;</a>
  
-      <div class=\"panel panel-default\" id=\"password_plaintext\">
-         ";
+      <div id=\"password_plaintext\">
+    <p>     ";
         // line 38
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["account"]) ? $context["account"] : $this->getContext($context, "account")), "password_plaintext"), "html", null, true);
-        echo "
-        
+        echo " </p>
+    
+        <a class=\"btn btn-default\" href=\"#\" id=\"view_password\" role=\"button\">Edit password &raquo;</a>    
       </div>
+
+    
 
 
   </div>
@@ -95,21 +98,21 @@ class __TwigTemplate_9d09fbc855fee79b7c54cb5b58a18c43dabcfeda6597e90a4723921ddf8
 ";
     }
 
-    // line 48
+    // line 51
     public function block_extra_javascript($context, array $blocks = array())
     {
-        // line 49
+        // line 52
         echo "
 <script>//turn to inline mode
     \$(document).ready(function() {
       var url = '";
-        // line 52
+        // line 55
         echo twig_escape_filter($this->env, $this->env->getExtension('slim')->urlFor("password-edit-ajax"), "html", null, true);
         echo "';
       \$('#title').editable({
         type: 'text',
         pk: ";
-        // line 55
+        // line 58
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["account"]) ? $context["account"] : $this->getContext($context, "account")), "id"), "html", null, true);
         echo ",
         url: url,
@@ -118,7 +121,7 @@ class __TwigTemplate_9d09fbc855fee79b7c54cb5b58a18c43dabcfeda6597e90a4723921ddf8
       \$('#url').editable({
         type: 'text',
         pk: ";
-        // line 61
+        // line 64
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["account"]) ? $context["account"] : $this->getContext($context, "account")), "id"), "html", null, true);
         echo ",
         url: url,
@@ -127,7 +130,7 @@ class __TwigTemplate_9d09fbc855fee79b7c54cb5b58a18c43dabcfeda6597e90a4723921ddf8
       \$('#descr').editable({
         type: 'text',
         pk: ";
-        // line 67
+        // line 70
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["account"]) ? $context["account"] : $this->getContext($context, "account")), "id"), "html", null, true);
         echo ",
         url: url,
@@ -136,7 +139,7 @@ class __TwigTemplate_9d09fbc855fee79b7c54cb5b58a18c43dabcfeda6597e90a4723921ddf8
       \$('#username').editable({
         type: 'text',
         pk: ";
-        // line 73
+        // line 76
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["account"]) ? $context["account"] : $this->getContext($context, "account")), "id"), "html", null, true);
         echo ",
         url: url,
@@ -166,6 +169,6 @@ class __TwigTemplate_9d09fbc855fee79b7c54cb5b58a18c43dabcfeda6597e90a4723921ddf8
 
     public function getDebugInfo()
     {
-        return array (  140 => 73,  131 => 67,  122 => 61,  113 => 55,  107 => 52,  102 => 49,  99 => 48,  87 => 38,  75 => 29,  66 => 23,  57 => 17,  48 => 11,  43 => 8,  40 => 7,  33 => 4,  30 => 3,);
+        return array (  143 => 76,  134 => 70,  125 => 64,  116 => 58,  110 => 55,  105 => 52,  102 => 51,  87 => 38,  75 => 29,  66 => 23,  57 => 17,  48 => 11,  43 => 8,  40 => 7,  33 => 4,  30 => 3,);
     }
 }

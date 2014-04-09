@@ -42,7 +42,7 @@ class __TwigTemplate_00969e0b13ad15018d7cea0e2530fd83305ed25531e4ca1387ee3e73cb7
 
     
 
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>Password Manager</title>
 
     <!-- Bootstrap core CSS -->
     <link href=\"";
@@ -93,13 +93,15 @@ class __TwigTemplate_00969e0b13ad15018d7cea0e2530fd83305ed25531e4ca1387ee3e73cb7
       </div>
     </div>
 
+ 
+
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class=\"jumbotron\">
       <div class=\"container\">
          ";
-        // line 63
+        // line 65
         $this->displayBlock('jumbotron', $context, $blocks);
-        // line 68
+        // line 70
         echo "      </div>
     </div>
 
@@ -107,9 +109,9 @@ class __TwigTemplate_00969e0b13ad15018d7cea0e2530fd83305ed25531e4ca1387ee3e73cb7
 
 
     ";
-        // line 74
+        // line 76
         $this->displayBlock('content', $context, $blocks);
-        // line 94
+        // line 96
         echo "
       <hr>
 
@@ -123,40 +125,40 @@ class __TwigTemplate_00969e0b13ad15018d7cea0e2530fd83305ed25531e4ca1387ee3e73cb7
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src=\"";
-        // line 106
+        // line 108
         echo twig_escape_filter($this->env, $this->env->getExtension('slim')->base(), "html", null, true);
         echo "/lib/jquery/jquery-2.1.0.js\"></script>
     <script src=\"";
-        // line 107
+        // line 109
         echo twig_escape_filter($this->env, $this->env->getExtension('slim')->base(), "html", null, true);
         echo "/lib/bootstrap-3.1/js/bootstrap.min.js\"></script>
     <script src=\"";
-        // line 108
+        // line 110
         echo twig_escape_filter($this->env, $this->env->getExtension('slim')->base(), "html", null, true);
         echo "/lib/bootstrap3-editable/js/bootstrap-editable.js\"></script>
     ";
-        // line 109
-        $this->displayBlock('extra_javascript', $context, $blocks);
         // line 111
+        $this->displayBlock('extra_javascript', $context, $blocks);
+        // line 113
         echo "  </body>
 </html>
 ";
     }
 
-    // line 63
+    // line 65
     public function block_jumbotron($context, array $blocks = array())
     {
-        // line 64
+        // line 66
         echo "        <h1>Smart Password Manager</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         <p><a class=\"btn btn-primary btn-lg\" role=\"button\">Learn more &raquo;</a></p>
         ";
     }
 
-    // line 74
+    // line 76
     public function block_content($context, array $blocks = array())
     {
-        // line 75
+        // line 77
         echo "      <!-- Example row of columns -->
       <div class=\"row\">
         <div class=\"col-md-4\">
@@ -178,10 +180,10 @@ class __TwigTemplate_00969e0b13ad15018d7cea0e2530fd83305ed25531e4ca1387ee3e73cb7
     ";
     }
 
-    // line 109
+    // line 111
     public function block_extra_javascript($context, array $blocks = array())
     {
-        // line 110
+        // line 112
         echo "    ";
     }
 
@@ -197,6 +199,6 @@ class __TwigTemplate_00969e0b13ad15018d7cea0e2530fd83305ed25531e4ca1387ee3e73cb7
 
     public function getDebugInfo()
     {
-        return array (  185 => 110,  182 => 109,  160 => 75,  157 => 74,  150 => 64,  147 => 63,  141 => 111,  139 => 109,  135 => 108,  131 => 107,  127 => 106,  113 => 94,  111 => 74,  103 => 68,  101 => 63,  56 => 21,  50 => 18,  40 => 11,  36 => 10,  32 => 9,  22 => 1,);
+        return array (  187 => 112,  184 => 111,  162 => 77,  159 => 76,  152 => 66,  149 => 65,  143 => 113,  141 => 111,  137 => 110,  133 => 109,  129 => 108,  115 => 96,  113 => 76,  105 => 70,  103 => 65,  56 => 21,  50 => 18,  40 => 11,  36 => 10,  32 => 9,  22 => 1,);
     }
 }
