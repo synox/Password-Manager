@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block jumbotron %}
+<h1>{{account.title}}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-2">Title:</div>
+  <div class="col-md-2">
+    <a href="#" id="title">{{account.title}}</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">Description:</div>
+  <div class="col-md-2">
+    <a href="#" id="descr">{{account.descr}}</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">URL:</div>
+  <div class="col-md-2">
+    <a href="#" id="url">{{account.url}}</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">Username:</div>
+  <div class="col-md-2">
+    <a href="#" id="username">{{account.username}}</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">Password:</div>
+  <div class="col-md-2">
+    <a class="btn btn-default" href="#" id="view_password" role="button">View password &raquo;</a>
+ 
+      <div class="panel panel-default" id="password_plaintext">
+         {{account.password_plaintext}}
+        
+      </div>
+
+
+  </div>
+</div>
+{% endblock %}
+
+
+{% block extra_javascript %}
+
+<script>//turn to inline mode
+    $(document).ready(function() {
+      var url = '{{ urlFor('password-edit-ajax') }}';
+      $('#title').editable({
+        type: 'text',
+        pk: {{account.id}},
+        url: url,
+        title: 'Enter title'
+      });
+      $('#url').editable({
+        type: 'text',
+        pk: {{account.id}},
+        url: url,
+        title: 'Enter url'
+      });      
+      $('#descr').editable({
+        type: 'text',
+        pk: {{account.id}},
+        url: url,
+        title: 'Enter description'
+      });
+      $('#username').editable({
+        type: 'text',
+        pk: {{account.id}},
+        url: url,
+        title: 'Enter username'
+      });
+
+      $('#view_password').click(function(){
+          $("#password_plaintext").show();
+          $("#view_password").hide();
+
+      });
+      
+    });
+      </script>
+{% endblock %}
