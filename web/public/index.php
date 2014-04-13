@@ -12,6 +12,7 @@ error_reporting(E_ALL);
 require '../vendor/autoload.php';
 
 require '../lib/db.php';
+require '../model/Account.php';
 
 // Prepare app
 $app = new \Slim\Slim(array(

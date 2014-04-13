@@ -80,7 +80,9 @@
     </div>
 
     <div class="container">
-
+        {% if flash['message'] is defined %}
+        <p class="bg-success">{{flash['message']}}</p>
+        {% endif %}
 
     {% block content %}
       <!-- Example row of columns -->

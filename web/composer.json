@@ -9,5 +9,7 @@
         "monolog/monolog": "1.*",
         "roderik/pwgen-php": "dev-master",
         "vlucas/valitron": "dev-master"
-    }
+    },
+    "psr-0": {"": "model/"}
+
 }

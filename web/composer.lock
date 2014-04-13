@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "c1732dff71d85d8cef091f6bbb39e260",
+    "hash": "0291f2cbf0d7d43b5a9d3c4d13b87e2e",
     "packages": [
         {
             "name": "lichtner/fluentpdo",

@@ -10,10 +10,6 @@
 
 {% import "macro.form.html" as form %}
 
-
-{% if flash['message'] is defined %}
-        hallo! {{flash['message']}}
-{% endif %}
 <form class="form-horizontal" role="form" method="post" action="{{urlFor('password-add-save')}}">
 
 
@@ -37,11 +33,11 @@
 
 
 
-    <div class="form-group {{form.print_error_class('email', form_errors)}}">
+    <div class="form-group {{form.print_error_class('title', form_errors)}}">
         <label for="input_title" class="col-sm-2 control-label">Title</label>
         <div class="col-sm-4">
             <input type="text" name="title" class="form-control" id="input_title" placeholder="" value="{{account.title}}"/>
-            {{ form.print_error('email', form_errors)}}
+            {{ form.print_error('title', form_errors)}}
         </div>
     </div>
 

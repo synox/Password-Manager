@@ -11,7 +11,6 @@
 
 {% macro print_error_class(fieldname,form_errors) %}
 {% spaceless %}
-
     {% for field,field_error in form_errors %}
         {% if field == fieldname %}
             has-error

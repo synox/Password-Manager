@@ -18,64 +18,25 @@ $app->post('/password/edit-ajax', function () use ($app,$fpdo) {
 
 
 $app->post('/password/add/save', function () use ($app, $fpdo) {
+    $app->view->appendData(array('form_errors' => array()));
+
+    // copy fields
+    $account = Account::fromParams($app->request->params());
+
     $v = new Valitron\Validator($app->request->params());
+    $v->rule('required', ['title', 'url', 'username', 'password']);
+    $v->labels(array(
+        'url' => 'Address'
+    ));
+    $v->rule('url', 'url');
 
-
-
-    $v->rule('required', ['name', 'email']);
-    $v->rule('email', 'email');
     if($v->validate()) {
         $app->flash('message', "ok!");
+        $app->redirect($app->urlFor("password-list"));
     } else {
         // Errors
         $app->view->appendData(array('form_errors' => $v->errors()));
-        print_r ($v->errors());
     }
-
-
-    $account = array ('username' => "", 'title'=>"", 'desc'=>"", 'url'=>"", 'password'=>"");
-
-    $errors = array();
-    $params = array(
-        'title' => array(
-            'name'=>'Title',
-            'required'=>true
-        ),
-        'desc' => array(
-            'name'=>'Description',
-            'required'=>true,
-        ),
-        'url' => array(
-            'name'=>'Address',
-            'required'=>true,
-        ),
-        'username' => array(
-            'name'=>'Description',
-            'required'=>true,
-        ),
-        'password' => array(
-            'name'=>'Message',
-            'required'=>true,
-        ),
-    );
-    foreach($params as $param=>$options){
-        $value = $app->request->params($param);
-        if($options['required']){
-            if(!$value){
-                $errors[] = $options['name'].' is required!';
-            }
-        }
-        $account[$param] = $value;
-    }
-
-    if($errors){
-        //$app->flash('errors',$errors);
-    }
-    else{
-        //submit_to_db($email, $subject, $message);
-        $app->flash('message','Form submitted!');
-    }
-
 
 
     $app->render('add.html', array('account' => $account));
