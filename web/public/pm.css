@@ -1,3 +1,11 @@
 #password_plaintext {
 	display: none;
 }
+
+#password_suggestions {
+    display: none;
+}
+
+.password_suggestion {
+    font-family: ;
+}

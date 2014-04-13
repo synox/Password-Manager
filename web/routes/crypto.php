@@ -40,7 +40,7 @@ $app->get('/crypt', function () use ($app) {
 $app->get('/pw', function () use ($app) {
       // Initialization of strings
 
-      $pwgen = new PWGen(12, false, true);
+      $pwgen = new PWGen(12, false, true,true,true,false,true);
       echo $pwgen->generate();
 });
 

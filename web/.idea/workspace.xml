@@ -23,28 +23,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="password.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/password.php">
+      <file leaf-file-name="crypto.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/crypto.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="54" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.5701358" vertical-offset="132" max-vertical-offset="1140">
+            <state line="18" column="38" selection-start="432" selection-end="432" vertical-scroll-proportion="0.25655976" vertical-offset="94" max-vertical-offset="780">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/detail.html">
+      <file leaf-file-name="edit.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="4" selection-start="1097" selection-end="1097" vertical-scroll-proportion="-9.375" vertical-offset="405" max-vertical-offset="1425">
+            <state line="116" column="37" selection-start="4066" selection-end="4066" vertical-scroll-proportion="-20.208334" vertical-offset="1255" max-vertical-offset="1935">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/add.html">
+      <file leaf-file-name="db.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="148" selection-end="148" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="1350">
+            <state line="6" column="27" selection-start="178" selection-end="178" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="225">
               <folding />
             </state>
           </provider>
@@ -53,7 +53,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="31" selection-start="266" selection-end="266" vertical-scroll-proportion="-6.25" vertical-offset="60" max-vertical-offset="825">
+            <state line="13" column="24" selection-start="234" selection-end="234" vertical-scroll-proportion="-3.75" vertical-offset="105" max-vertical-offset="825">
               <folding />
             </state>
           </provider>
@@ -96,7 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/templates/detail.html" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/model/account.php" />
         <option value="$PROJECT_DIR$/templates/macro.form.html" />
@@ -106,6 +105,12 @@
         <option value="$PROJECT_DIR$/templates/add.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/routes/password.php" />
+        <option value="$PROJECT_DIR$/public/pm.css" />
+        <option value="$PROJECT_DIR$/routes/account.php" />
+        <option value="$PROJECT_DIR$/templates/edit.html" />
+        <option value="$PROJECT_DIR$/templates/detail.html" />
+        <option value="$PROJECT_DIR$/routes/crypto.php" />
+        <option value="$PROJECT_DIR$/lib/crypto.lib.php" />
       </list>
     </option>
   </component>
@@ -245,7 +250,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -316,7 +321,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -351,7 +356,7 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/password.php">
+    <entry file="file://$PROJECT_DIR$/routes/account.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="28" selection-start="1419" selection-end="1419" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1650">
           <folding />
@@ -372,7 +377,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/add.html">
+    <entry file="file://$PROJECT_DIR$/templates/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="28" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="990">
           <folding />
@@ -400,7 +405,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/password.php">
+    <entry file="file://$PROJECT_DIR$/routes/account.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="16" selection-start="1503" selection-end="1503" vertical-scroll-proportion="0.0" vertical-offset="499" max-vertical-offset="1455">
           <folding />
@@ -414,7 +419,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/add.html">
+    <entry file="file://$PROJECT_DIR$/templates/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="960">
           <folding />
@@ -442,7 +447,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/password.php">
+    <entry file="file://$PROJECT_DIR$/routes/account.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="630">
           <folding />
@@ -491,20 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="4" selection-start="1097" selection-end="1097" vertical-scroll-proportion="-9.375" vertical-offset="405" max-vertical-offset="1425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="148" selection-end="148" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="1350">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="83" column="54" selection-start="3608" selection-end="3608" vertical-scroll-proportion="-5.625" vertical-offset="1110" max-vertical-offset="1965">
@@ -528,16 +519,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
+    <entry file="file://$PROJECT_DIR$/public/pm.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="31" selection-start="266" selection-end="266" vertical-scroll-proportion="-6.25" vertical-offset="60" max-vertical-offset="825">
+        <state line="9" column="17" selection-start="127" selection-end="127" vertical-scroll-proportion="0.19650654" vertical-offset="0" max-vertical-offset="687">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/password.php">
+    <entry file="file://$PROJECT_DIR$/lib/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="54" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.5701358" vertical-offset="132" max-vertical-offset="1140">
+        <state line="6" column="27" selection-start="178" selection-end="178" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="24" selection-start="234" selection-end="234" vertical-scroll-proportion="-3.75" vertical-offset="105" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="37" selection-start="4066" selection-end="4066" vertical-scroll-proportion="-20.208334" vertical-offset="1255" max-vertical-offset="1935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="0" selection-start="1914" selection-end="1914" vertical-scroll-proportion="0.7058824" vertical-offset="762" max-vertical-offset="1455">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="64" selection-start="1166" selection-end="1166" vertical-scroll-proportion="-21.875" vertical-offset="0" max-vertical-offset="1260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="392" column="9" selection-start="11316" selection-end="11316" vertical-scroll-proportion="0.3453997" vertical-offset="5651" max-vertical-offset="16890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/roderik/pwgen-php/PWGen.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="384" column="55" selection-start="12786" selection-end="12786" vertical-scroll-proportion="0.28432956" vertical-offset="5584" max-vertical-offset="6300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/crypto.lib.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="109" selection-end="109" vertical-scroll-proportion="0.13574661" vertical-offset="0" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/crypto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="38" selection-start="432" selection-end="432" vertical-scroll-proportion="0.25655976" vertical-offset="94" max-vertical-offset="780">
           <folding />
         </state>
       </provider>

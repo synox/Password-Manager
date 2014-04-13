@@ -38,7 +38,7 @@ $app->view->parserOptions = array(
 );
 $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 
-require '../routes/password.php';
+require '../routes/account.php';
 require '../routes/crypto.php';
 require '../routes/site.php';
 

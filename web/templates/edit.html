@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block jumbotron %}
+<h1>Add Account</h1>
+{% endblock %}
+
+{% block content %}
+
+{% import "macro.form.html" as form %}
+
+<form class="form-horizontal" role="form" method="post" action="{{urlFor('password-add')}}">
+
+
+    {% if form_errors|length > 0 %}
+    <div class="form-group has-warning">
+        <label class="col-sm-2 control-label">Warning:</label>
+        <div class="col-sm-4">
+            <p class="bg-warning">Please fix some small issues with your input.</p>
+            {# note: disabled template because we no longer use this
+
+                {% for field_error in form_errors %}
+                    {% for error in field_error %}
+                        <p class="bg-warning">{{error}}</p>
+                    {% endfor %}
+                {% endfor %}
+            #}
+
+        </div>
+    </div>
+    {% endif %}
+
+
+    <div class="form-group {{form.print_error_class('title', form_errors)}}">
+        <label for="input_title" class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-4">
+            <input type="text" name="title" class="form-control" id="input_title" placeholder="" value="{{account.title}}"/>
+            {{ form.print_error('title', form_errors)}}
+        </div>
+    </div>
+
+    <div class="form-group {{form.print_error_class('desc', form_errors)}}">
+        <label for="input_desc" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-4">
+            <textarea name="desc" class="form-control" id="input_desc" >{{account.desc}}</textarea>
+            {{ form.print_error('desc', form_errors)}}
+        </div>
+    </div>
+
+    <div class="form-group {{form.print_error_class('url', form_errors)}}">
+        <label for="input_url" class="col-sm-2 control-label">Address</label>
+        <div class="col-sm-4">
+            <input type="text" name="url" class="form-control" id="input_url" placeholder="" value="{{account.url}}">
+            {{ form.print_error('url', form_errors)}}
+        </div>
+    </div>
+
+    <div class="form-group {{form.print_error_class('username', form_errors)}}">
+        <label for="input_username" class="col-sm-2 control-label">Username</label>
+        <div class="col-sm-4">
+            <input type="text"  name="username" class="form-control" id="input_username" placeholder="" value="{{account.username}}">
+            {{ form.print_error('username', form_errors)}}
+        </div>
+    </div>
+
+    <div class="form-group {{form.print_error_class('password', form_errors)}}">
+        <label for="input_password" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-4">
+            <input type="password"  name="password" class="form-control" id="input_password" placeholder="" value="{{account.password}}">
+            {{ form.print_error('password', form_errors)}}
+        </div>
+        <div class="col-sm-2">
+            <a class="btn btn-default" href="#" id="generate_password" role="button">Generate password &raquo;</a>
+        </div>
+
+    </div>
+
+    <div class="form-group" id="password_suggestions">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Password suggestions</h3>
+                </div>
+                <div class="panel-body password_suggestion">
+                    {% for password in example_passwords %}
+                    <p><pre>{{password}}</pre></p>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <button type="submit" class="btn btn-success">Add account</button>
+
+        </div>
+    </div>
+
+
+</form>
+
+{% endblock %}
+
+
+{% block extra_javascript %}
+
+<script>//turn to inline mode
+$(document).ready(function() {
+
+    $('#generate_password').click(function(){
+        event.preventDefault();
+        $("#password_suggestions").show();
+        $("#generate_password").hide();
+
+    });
+
+});
+</script>
+{% endblock %}

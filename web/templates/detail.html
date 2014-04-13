@@ -38,7 +38,7 @@
     <p>     {{account.password_plaintext}} </p>
     
         <a class="btn btn-warning" href="#" id="view_password" role="button">Change password &raquo;</a>
-      </div>
+ </div>
 
     
 
@@ -79,6 +79,8 @@
       });
 
       $('#view_password').click(function(){
+          event.preventDefault();
+
           $("#password_plaintext").show();
           $("#view_password").hide();
 
