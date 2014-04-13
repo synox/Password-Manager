@@ -2,6 +2,10 @@
 mb_internal_encoding('UTF-8');
 mb_http_output('UTF-8');
 
+session_cache_limiter(false);
+session_start();
+
+
 // Report all PHP errors (see changelog)
 error_reporting(E_ALL);
 
@@ -26,13 +30,12 @@ $app->container->singleton('log', function () {
 $app->view(new \Slim\Views\Twig());
 $app->view->parserOptions = array(
     'charset' => 'utf-8',
-    'cache' => realpath('../templates/cache'),
+    'cache' => realpath('../cache'),
     'auto_reload' => true,
     'strict_variables' => true,
     'autoescape' => true
 );
 $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
-
 
 require '../routes/password.php';
 require '../routes/crypto.php';

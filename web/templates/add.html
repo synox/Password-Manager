@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block jumbotron %}
+<h1>Add Account</h1>
+{% endblock %}
+
+{% block content %}
+
+
+
+{% import "macro.form.html" as form %}
+
+
+{% if flash['message'] is defined %}
+        hallo! {{flash['message']}}
+{% endif %}
+<form class="form-horizontal" role="form" method="post" action="{{urlFor('password-add-save')}}">
+
+
+    {% if form_errors|length > 0 %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Fehler:</label>
+        <div class="col-sm-4">
+
+                {% for field_error in form_errors %}
+                    {% for error in field_error %}
+                        <p class="bg-warning">{{error}}</p>
+                    {% endfor %}
+                {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+
+
+
+
+
+
+    <div class="form-group {{form.print_error_class('email', form_errors)}}">
+        <label for="input_title" class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-4">
+            <input type="text" name="title" class="form-control" id="input_title" placeholder="" value="{{account.title}}"/>
+            {{ form.print_error('email', form_errors)}}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="input_descr" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-4">
+            <textarea name="descr" class="form-control" id="input_descr" >{{account.desc}}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="input_url" class="col-sm-2 control-label">Address</label>
+        <div class="col-sm-4">
+            <input type="text" name="url" class="form-control" id="input_url" placeholder="" value="{{account.url}}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="input_username" class="col-sm-2 control-label">Username</label>
+        <div class="col-sm-4">
+            <input type="text"  name="username" class="form-control" id="input_username" placeholder="" value="{{account.username}}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="input_password" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-4">
+            <input type="password"  name="password" class="form-control" id="input_password" placeholder="" value="{{account.password}}">
+        </div>
+    </div><div class="form-group">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <button type="submit" class="btn btn-success">Add account</button>
+
+        </div>
+    </div>
+
+
+</form>
+
+{% endblock %}
+
+
+

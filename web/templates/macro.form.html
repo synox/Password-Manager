@@ -1,0 +1,21 @@
+{% macro print_error(fieldname,form_errors) %}
+    {% for field,field_error in form_errors %}
+        {% if field == fieldname %}
+            {% for error in field_error %}
+                <p class="bg-warning">{{error}}</p>
+            {% endfor %}
+        {% endif %}
+
+    {% endfor %}
+{% endmacro %}
+
+{% macro print_error_class(fieldname,form_errors) %}
+{% spaceless %}
+
+    {% for field,field_error in form_errors %}
+        {% if field == fieldname %}
+            has-error
+        {% endif %}
+    {% endfor %}
+{% endspaceless %}
+{% endmacro %}”
