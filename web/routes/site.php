@@ -1,5 +1,7 @@
 <?
 
+use PasswordManager\Permission;
+
 // Define routes
 $app->get('/', function () use ($app) {
     // Sample log message
@@ -61,8 +63,8 @@ $app->post('/login', function () use ($app,$fpdo) {
         $user_id = $userPersistence->checkLogin($app->request->params('username'), $app->request->params('password'));
         $app->log->debug("userid: ". $user_id);
         if($user_id != null) {
-            \PasswordManager\Permission::setUserid($user_id);
-            \PasswordManager\Permission::setPassword($app->request->params('password'));
+            Permission::setUserid($user_id);
+            Permission::setPassword($app->request->params('password'));
             $app->flash('message', "You are now logged in.");
             $app->log->debug("login done, id=" . $user_id);
             $app->log->debug("session: =" . var_dump($_SESSION));

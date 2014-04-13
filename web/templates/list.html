@@ -20,7 +20,7 @@
         <tr>
           <td>{{account.title}}</td>
           <td>{{account.url}}</td>
-          <td>{{account.descr}}</td>
+          <td>{{account.description}}</td>
           <td>{{account.username}}</td>
           <td>   <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p></td>
         </tr>
@@ -32,7 +32,7 @@
 	 {% for account in accounts %}
 	  <div class="col-md-4">
           <h2><a href="{{account.url}}">{{account.title}}</a></h2>
-          <p>{{account.descr}} </p>
+          <p>{{account.description}} </p>
           <p><a href="{{ urlFor('account-detail', {"id": account.id}) }}" class="btn btn-default"   role="button">View details &raquo;</a>
 
         </div>

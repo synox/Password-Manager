@@ -47,6 +47,17 @@ function requiresLogin() {
     }
 }
 
+// log db access
+$fpdo->debug=function($BaseQuery) use ($app) {
+
+    $str = "query: " . $BaseQuery->getQuery(false) . "\n";
+    $str .= "parameters: " . implode(', ', $BaseQuery->getParameters()) . "\n";
+    if($BaseQuery->getResult() != null) {
+       $str .= "rowCount: " . $BaseQuery->getResult()->rowCount();
+    }
+    $app->log->debug($str);
+};
+
 require '../routes/account.php';
 require '../routes/crypto.php';
 require '../routes/site.php';

@@ -1,5 +1,8 @@
 <?
 
+use PasswordManager\Permission;
+use PasswordManager\Persistence\AccountPersistence;
+
 // Route for adding a new account
 $app->get('/account/add', 'requiresLogin', function () use ($app, $fpdo) {
     $app->view->appendData(array('form_errors' => array()));
@@ -20,12 +23,14 @@ $app->post('/account/add', 'requiresLogin', function () use ($app, $fpdo) {
     $v->rule('required', ['title', 'url', 'username', 'password']);
     $v->labels(array(
         'url' => 'Address',
-        'desc' => 'Description',
     ));
 
     if($v->validate()) {
-        $app->flash('message', "ok!");
-        $app->redirect($app->urlFor("password-list"));
+        $persistence = new \PasswordManager\Persistence\AccountPersistence($fpdo);
+        $persistence->persist(\PasswordManager\Permission::getUserid(), $account);
+
+        $app->flash('message', "Account has been added.");
+        $app->redirect($app->urlFor("account-list"));
     } else {
         // Errors
 
@@ -43,29 +48,39 @@ $app->post('/account/add', 'requiresLogin', function () use ($app, $fpdo) {
 $app->post('/account/edit-ajax', 'requiresLogin', function () use ($app,$fpdo) {
     $account_id = $app->request->params('pk');
 
-    $query = $fpdo->update('account')->where('user_id',  \PasswordManager\Permission::getUserid())->where('id', $account_id);
+    $persistence = new AccountPersistence($fpdo);
 
-    foreach (array('username', 'title', 'descr', 'url') as $field) {
+    $fieldname = null;
+    $newValue = null;
+    foreach (array('username', 'title', 'description', 'url') as $field) {
         if($app->request->params('name') == $field) {
-            $value = $app->request->params('value');
-            $query = $query->set($field, $value);
+            $fieldname = $field;
+            $newValue = $app->request->params('value');
+            break;
         }
     }
-    if(!$query->execute()) {
+
+    if($fieldname == null) {
+        $app->error("invalid input");
+        return;
+    }
+
+
+    if (!$persistence->updateValue($account_id, Permission::getUserid(), $fieldname, $newValue) ) {
         $app->response->setStatus(400);
     }
 })->name('account-edit-ajax');
 
 
 $app->get('/account/list', 'requiresLogin', function () use ($app,$fpdo) {
-    $accounts =  $fpdo->from('account')->where('user_id', \PasswordManager\Permission::getUserid())->orderBy('title')->fetchAll();
+    $accounts =  $fpdo->from('account')->where('user_id', Permission::getUserid())->orderBy('title')->fetchAll();
 
     $app->render('list.html', array('accounts' =>  $accounts));
 })->name('account-list');
 
 
 $app->get('/account/:id', 'requiresLogin', function ($account_id) use ($app, $fpdo) {
-	$account =  $fpdo->from('account')->where('user_id', \PasswordManager\Permission::getUserid())->where('id', $account_id)->orderBy('title')->fetch();
+	$account =  $fpdo->from('account')->where('user_id', Permission::getUserid())->where('id', $account_id)->orderBy('title')->fetch();
 
 	$account['password_plaintext'] = "hallo";
 

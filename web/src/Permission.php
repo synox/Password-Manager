@@ -29,6 +29,6 @@ class Permission
     public static function setUserid($user_id)
     {
         $_SESSION['pm.user_id'] = $user_id;
-
     }
+
 } 

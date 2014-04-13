@@ -14,7 +14,7 @@
 <div class="row">
   <div class="col-md-2">Description:</div>
   <div class="col-md-2">
-    <a href="#" id="descr">{{account.descr}}</a>
+    <a href="#" id="description">{{account.description}}</a>
   </div>
 </div>
 <div class="row">
@@ -65,7 +65,7 @@
         url: url,
         title: 'Enter url'
       });      
-      $('#descr').editable({
+      $('#description').editable({
         type: 'text',
         pk: {{account.id}},
         url: url,
