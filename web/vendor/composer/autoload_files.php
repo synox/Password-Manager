@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     $vendorDir . '/lichtner/fluentpdo/FluentPDO/FluentPDO.php',
+    $vendorDir . '/ircmaxell/password-compat/lib/password.php',
 );

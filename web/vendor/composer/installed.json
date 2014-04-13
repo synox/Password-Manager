@@ -1,5 +1,138 @@
 [
     {
+        "name": "lichtner/fluentpdo",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/lichtner/fluentpdo.git",
+            "reference": "26d6a5b9dda8a94d14b2ac037caf10362f92b487"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/lichtner/fluentpdo/zipball/26d6a5b9dda8a94d14b2ac037caf10362f92b487",
+            "reference": "26d6a5b9dda8a94d14b2ac037caf10362f92b487",
+            "shasum": ""
+        },
+        "time": "2014-01-09 20:25:56",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "FluentPDO/FluentPDO.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0",
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Marek Lichtner",
+                "homepage": "http://licht.sk/"
+            }
+        ],
+        "description": "FluentPDO is small PHP library for rapid query building. Killer feature is smart join builder which generates joins automatically.",
+        "homepage": "http://fluentpdo.com/",
+        "keywords": [
+            "database",
+            "dbal",
+            "pdo"
+        ]
+    },
+    {
+        "name": "roderik/pwgen-php",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/roderik/pwgen-php.git",
+            "reference": "551d48f91704921063af38f1803f9c5e9e624004"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/roderik/pwgen-php/zipball/551d48f91704921063af38f1803f9c5e9e624004",
+            "reference": "551d48f91704921063af38f1803f9c5e9e624004",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2012-09-26 13:12:57",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "PWGen": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL"
+        ],
+        "authors": [
+            {
+                "name": "Theodore Ts'o",
+                "email": "tytso@alum.mit.edu"
+            },
+            {
+                "name": "Superwayne",
+                "email": "superwayne@superwayne.org"
+            }
+        ],
+        "description": "pwgen-php is a simple PHP class which aims to clone the GNU pwgen functionality.",
+        "keywords": [
+            "generator",
+            "password"
+        ]
+    },
+    {
+        "name": "vlucas/valitron",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/vlucas/valitron.git",
+            "reference": "430a8324ece573e338ef68cb68e368f66fddb0d7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/vlucas/valitron/zipball/430a8324ece573e338ef68cb68e368f66fddb0d7",
+            "reference": "430a8324ece573e338ef68cb68e368f66fddb0d7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "time": "2014-04-10 15:53:37",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Valitron": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD"
+        ],
+        "authors": [
+            {
+                "name": "Vance Lucas",
+                "email": "vance@vancelucas.com",
+                "homepage": "http://www.vancelucas.com"
+            }
+        ],
+        "description": "Simple, elegant, stand-alone validation library with NO dependencies",
+        "homepage": "http://github.com/vlucas/valitron",
+        "keywords": [
+            "valid",
+            "validation",
+            "validator"
+        ]
+    },
+    {
         "name": "slim/slim",
         "version": "2.4.3",
         "version_normalized": "2.4.3.0",
@@ -104,45 +237,62 @@
         ]
     },
     {
-        "name": "lichtner/fluentpdo",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "name": "twig/twig",
+        "version": "v1.15.1",
+        "version_normalized": "1.15.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/lichtner/fluentpdo.git",
-            "reference": "26d6a5b9dda8a94d14b2ac037caf10362f92b487"
+            "url": "https://github.com/fabpot/Twig.git",
+            "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/lichtner/fluentpdo/zipball/26d6a5b9dda8a94d14b2ac037caf10362f92b487",
-            "reference": "26d6a5b9dda8a94d14b2ac037caf10362f92b487",
+            "url": "https://api.github.com/repos/fabpot/Twig/zipball/1fb5784662f438d7d96a541e305e28b812e2eeed",
+            "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed",
             "shasum": ""
         },
-        "time": "2014-01-09 20:25:56",
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "time": "2014-02-13 10:19:29",
         "type": "library",
-        "installation-source": "source",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.15-dev"
+            }
+        },
+        "installation-source": "dist",
         "autoload": {
-            "files": [
-                "FluentPDO/FluentPDO.php"
-            ]
+            "psr-0": {
+                "Twig_": "lib/"
+            }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "Apache-2.0",
-            "GPL-2.0+"
+            "BSD-3-Clause"
         ],
         "authors": [
             {
-                "name": "Marek Lichtner",
-                "homepage": "http://licht.sk/"
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com",
+                "role": "Project Founder"
+            },
+            {
+                "name": "Twig Team",
+                "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
+                "role": "Contributors"
             }
         ],
-        "description": "FluentPDO is small PHP library for rapid query building. Killer feature is smart join builder which generates joins automatically.",
-        "homepage": "http://fluentpdo.com/",
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "http://twig.sensiolabs.org",
         "keywords": [
-            "database",
-            "dbal",
-            "pdo"
+            "templating"
         ]
     },
     {
@@ -183,65 +333,6 @@
             "log",
             "psr",
             "psr-3"
-        ]
-    },
-    {
-        "name": "twig/twig",
-        "version": "v1.15.1",
-        "version_normalized": "1.15.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/fabpot/Twig.git",
-            "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/fabpot/Twig/zipball/1fb5784662f438d7d96a541e305e28b812e2eeed",
-            "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2.4"
-        },
-        "time": "2014-02-13 10:19:29",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.15-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Twig_": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": "http://fabien.potencier.org",
-                "role": "Lead Developer"
-            },
-            {
-                "name": "Armin Ronacher",
-                "email": "armin.ronacher@active-4.com",
-                "role": "Project Founder"
-            },
-            {
-                "name": "Twig Team",
-                "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
-                "role": "Contributors"
-            }
-        ],
-        "description": "Twig, the flexible, fast, and secure template language for PHP",
-        "homepage": "http://twig.sensiolabs.org",
-        "keywords": [
-            "templating"
         ]
     },
     {
@@ -288,7 +379,7 @@
                 "dev-master": "1.8.x-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Monolog\\": "src/Monolog"
@@ -315,94 +406,47 @@
         ]
     },
     {
-        "name": "roderik/pwgen-php",
+        "name": "ircmaxell/password-compat",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/roderik/pwgen-php.git",
-            "reference": "551d48f91704921063af38f1803f9c5e9e624004"
+            "url": "https://github.com/ircmaxell/password_compat.git",
+            "reference": "c91b1168bc53c26f56fc65f16958b5be45ca5dc9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/roderik/pwgen-php/zipball/551d48f91704921063af38f1803f9c5e9e624004",
-            "reference": "551d48f91704921063af38f1803f9c5e9e624004",
+            "url": "https://api.github.com/repos/ircmaxell/password_compat/zipball/c91b1168bc53c26f56fc65f16958b5be45ca5dc9",
+            "reference": "c91b1168bc53c26f56fc65f16958b5be45ca5dc9",
             "shasum": ""
         },
-        "require": {
-            "php": ">=5.3.3"
+        "require-dev": {
+            "phpunit/phpunit": "4.*"
         },
-        "time": "2012-09-26 13:12:57",
+        "time": "2014-03-21 11:47:21",
         "type": "library",
         "installation-source": "source",
         "autoload": {
-            "psr-0": {
-                "PWGen": ""
-            }
+            "files": [
+                "lib/password.php"
+            ]
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "GPL"
+            "MIT"
         ],
         "authors": [
             {
-                "name": "Theodore Ts'o",
-                "email": "tytso@alum.mit.edu"
-            },
-            {
-                "name": "Superwayne",
-                "email": "superwayne@superwayne.org"
+                "name": "Anthony Ferrara",
+                "email": "ircmaxell@php.net",
+                "homepage": "http://blog.ircmaxell.com"
             }
         ],
-        "description": "pwgen-php is a simple PHP class which aims to clone the GNU pwgen functionality.",
+        "description": "A compatibility library for the proposed simplified password hashing algorithm: https://wiki.php.net/rfc/password_hash",
+        "homepage": "https://github.com/ircmaxell/password_compat",
         "keywords": [
-            "generator",
+            "hashing",
             "password"
-        ]
-    },
-    {
-        "name": "vlucas/valitron",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/vlucas/valitron.git",
-            "reference": "430a8324ece573e338ef68cb68e368f66fddb0d7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/vlucas/valitron/zipball/430a8324ece573e338ef68cb68e368f66fddb0d7",
-            "reference": "430a8324ece573e338ef68cb68e368f66fddb0d7",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.2"
-        },
-        "time": "2014-04-10 15:53:37",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Valitron": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD"
-        ],
-        "authors": [
-            {
-                "name": "Vance Lucas",
-                "email": "vance@vancelucas.com",
-                "homepage": "http://www.vancelucas.com"
-            }
-        ],
-        "description": "Simple, elegant, stand-alone validation library with NO dependencies",
-        "homepage": "http://github.com/vlucas/valitron",
-        "keywords": [
-            "valid",
-            "validation",
-            "validator"
         ]
     }
 ]

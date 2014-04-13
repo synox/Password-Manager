@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block jumbotron %}
+<h1>Register</h1>
+<p>In just one step you can register an account and start managing your passwords. </p>
+{% endblock %}
+
+{% block content %}
+
+{% import "macro.form.html" as form %}
+
+<form class="form-horizontal" role="form" method="post" action="{{urlFor('register-save')}}">
+
+
+    {% if form_errors|length > 0 %}
+    <div class="form-group has-warning">
+        <label class="col-sm-2 control-label">Warning:</label>
+        <div class="col-sm-4">
+            <p class="bg-warning">Please fix some small issues with your input.</p>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="form-group {{form.print_error_class('username', form_errors)}}">
+        <label for="input_username" class="col-sm-2 control-label">Username</label>
+        <div class="col-sm-4">
+            <input type="text"  name="username" class="form-control" id="input_username" placeholder="" value="{%if username is defined%}{{username}}{%endif%}">
+            {{ form.print_error('username', form_errors)}}
+        </div>
+    </div>
+
+    <div class="form-group {{form.print_error_class('password', form_errors)}}">
+        <label for="input_password" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-4">
+            <input type="password"  name="password" class="form-control" id="input_password" placeholder="" value="">
+            {{ form.print_error('password', form_errors)}}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <button type="submit" class="btn btn-success">Register</button>
+
+        </div>
+    </div>
+
+
+</form>
+
+{% endblock %}
+
+
+{% block extra_javascript %}
+
+<script>//turn to inline mode
+$(document).ready(function() {
+
+    $('#generate_password').click(function(){
+        event.preventDefault();
+        $("#password_suggestions").show();
+        $("#generate_password").hide();
+
+    });
+
+});
+</script>
+{% endblock %}

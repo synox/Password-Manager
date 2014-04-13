@@ -5,7 +5,7 @@ $app->get('/account/add', 'requiresLogin', function () use ($app, $fpdo) {
     $app->view->appendData(array('form_errors' => array()));
     $app->view->appendData(array('example_passwords' => CryptoHelper::generatePasswords(5)));
 
-    $account = new Account();
+    $account = new \PasswordManager\Model\Account();
 
     $app->render('edit.html', array('account' => $account));
 })->name('account-add');
@@ -14,7 +14,7 @@ $app->get('/account/add', 'requiresLogin', function () use ($app, $fpdo) {
 // Route for Saving a new account
 $app->post('/account/add', 'requiresLogin', function () use ($app, $fpdo) {
     // copy fields
-    $account = Account::fromParams($app->request->params());
+    $account = \PasswordManager\Model\Account::fromParams($app->request->params());
 
     $v = new Valitron\Validator($app->request->params());
     $v->rule('required', ['title', 'url', 'username', 'password']);
@@ -43,7 +43,7 @@ $app->post('/account/add', 'requiresLogin', function () use ($app, $fpdo) {
 $app->post('/account/edit-ajax', 'requiresLogin', function () use ($app,$fpdo) {
     $account_id = $app->request->params('pk');
 
-    $query = $fpdo->update('account')->where('user_id', 1)->where('id', $account_id);
+    $query = $fpdo->update('account')->where('user_id',  \PasswordManager\Permission::getUserid())->where('id', $account_id);
 
     foreach (array('username', 'title', 'descr', 'url') as $field) {
         if($app->request->params('name') == $field) {
@@ -58,14 +58,14 @@ $app->post('/account/edit-ajax', 'requiresLogin', function () use ($app,$fpdo) {
 
 
 $app->get('/account/list', 'requiresLogin', function () use ($app,$fpdo) {
-    $accounts =  $fpdo->from('account')->where('user_id', 1)->orderBy('title')->fetchAll();
+    $accounts =  $fpdo->from('account')->where('user_id', \PasswordManager\Permission::getUserid())->orderBy('title')->fetchAll();
 
     $app->render('list.html', array('accounts' =>  $accounts));
 })->name('account-list');
 
 
 $app->get('/account/:id', 'requiresLogin', function ($account_id) use ($app, $fpdo) {
-	$account =  $fpdo->from('account')->where('user_id', 1)->where('id', $account_id)->orderBy('title')->fetch();
+	$account =  $fpdo->from('account')->where('user_id', \PasswordManager\Permission::getUserid())->where('id', $account_id)->orderBy('title')->fetch();
 
 	$account['password_plaintext'] = "hallo";
 

@@ -9,11 +9,9 @@ session_start();
 // Report all PHP errors (see changelog)
 error_reporting(E_ALL);
 
-$loader = require '../vendor/autoload.php';
-var_dump($loader);
+require '../vendor/autoload.php';
 
 require '../lib/db.php';
-require '../model/Account.php';
 
 // Prepare app
 $app = new \Slim\Slim(array(
@@ -39,25 +37,19 @@ $app->view->parserOptions = array(
 );
 $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 
-//$userPersistence = new \PasswordManager\Persistence\UserPersistence($fpdo);
-
+$app->view->appendData(array('loggedin'=>\PasswordManager\Permission::isLoggedin()));
 
 function requiresLogin() {
-        echo "login";
-        if(!isset($_SESSION['pm_userid'])){
-            $app = \Slim\Slim::getInstance();
-            $app->flash('error', 'Login required');
-
-        }
+    $app = \Slim\Slim::getInstance();
+    if(!isset($_SESSION['pm.user_id'])){
+        $app->flash('error', 'Login required');
         $app->redirect($app->urlFor('login'));
+    }
 }
 
 require '../routes/account.php';
 require '../routes/crypto.php';
 require '../routes/site.php';
-
-
-
 
 
 // Run app
