@@ -35,7 +35,7 @@
     <a class="btn btn-default" href="#" id="view_password" role="button">View password &raquo;</a>
  
       <div id="password_plaintext">
-    <p>     {{account.password_plaintext}} </p>
+    <p> <pre>{{account.password_plaintext}}</pre></p>
     
         <a class="btn btn-warning" href="#" id="view_password" role="button">Change password &raquo;</a>
  </div>
@@ -52,7 +52,7 @@
 
 <script>//turn to inline mode
     $(document).ready(function() {
-      var url = '{{ urlFor('password-edit-ajax') }}';
+      var url = '{{ urlFor('account-edit-ajax') }}';
       $('#title').editable({
         type: 'text',
         pk: {{account.id}},

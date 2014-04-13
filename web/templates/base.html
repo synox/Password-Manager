@@ -43,13 +43,14 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand glyphicon glyphicon-paperclip" href="#"> Passwords</a>
+              <a class="navbar-brand glyphicon glyphicon-paperclip" href="{{ urlFor('home') }}"> Passwords</a>
           </div>
           <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="{{ urlFor('password-list') }}">List</a></li>
-                  <li><a href="{{ urlFor('password-add') }}">Add</a></li>
+                  <li class="active"><a href="{{ urlFor('home') }}">Home</a></li>
+                  <li><a href="{{ urlFor('account-list') }}">List</a></li>
+                  <li><a href="{{ urlFor('account-add') }}">Add</a></li>
+                  <li><a href="{{ urlFor('generate-password') }}">Generate Password</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                   <form class="navbar-form navbar-right" role="form">

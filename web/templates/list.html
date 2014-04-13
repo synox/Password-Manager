@@ -33,7 +33,7 @@
 	  <div class="col-md-4">
           <h2><a href="{{account.url}}">{{account.title}}</a></h2>
           <p>{{account.descr}} </p>
-          <p><a href="{{ urlFor('password-detail', {"id": account.id}) }}" class="btn btn-default"   role="button">View details &raquo;</a>
+          <p><a href="{{ urlFor('account-detail', {"id": account.id}) }}" class="btn btn-default"   role="button">View details &raquo;</a>
 
         </div>
        {% endfor %}

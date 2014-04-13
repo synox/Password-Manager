@@ -1,18 +1,18 @@
 <?
 
 // Route for adding a new account
-$app->get('/account/add', function () use ($app, $fpdo) {
+$app->get('/account/add', 'requiresLogin', function () use ($app, $fpdo) {
     $app->view->appendData(array('form_errors' => array()));
     $app->view->appendData(array('example_passwords' => CryptoHelper::generatePasswords(5)));
 
     $account = new Account();
 
     $app->render('edit.html', array('account' => $account));
-})->name('password-add');
+})->name('account-add');
 
 
 // Route for Saving a new account
-$app->post('/account/add', function () use ($app, $fpdo) {
+$app->post('/account/add', 'requiresLogin', function () use ($app, $fpdo) {
     // copy fields
     $account = Account::fromParams($app->request->params());
 
@@ -36,11 +36,11 @@ $app->post('/account/add', function () use ($app, $fpdo) {
         $app->render('edit.html', array('account' => $account));
     }
 
-})->name('password-add-save');
+})->name('account-add-save');
 
 
 
-$app->post('/account/edit-ajax', function () use ($app,$fpdo) {
+$app->post('/account/edit-ajax', 'requiresLogin', function () use ($app,$fpdo) {
     $account_id = $app->request->params('pk');
 
     $query = $fpdo->update('account')->where('user_id', 1)->where('id', $account_id);
@@ -54,26 +54,23 @@ $app->post('/account/edit-ajax', function () use ($app,$fpdo) {
     if(!$query->execute()) {
         $app->response->setStatus(400);
     }
-})->name('password-edit-ajax');
+})->name('account-edit-ajax');
 
 
+$app->get('/account/list', 'requiresLogin', function () use ($app,$fpdo) {
+    $accounts =  $fpdo->from('account')->where('user_id', 1)->orderBy('title')->fetchAll();
 
-$app->get('/account/:id', function ($account_id) use ($app, $fpdo) {
+    $app->render('list.html', array('accounts' =>  $accounts));
+})->name('account-list');
+
+
+$app->get('/account/:id', 'requiresLogin', function ($account_id) use ($app, $fpdo) {
 	$account =  $fpdo->from('account')->where('user_id', 1)->where('id', $account_id)->orderBy('title')->fetch();
 
 	$account['password_plaintext'] = "hallo";
 
     $app->render('detail.html', array('account'=>$account));
-})->name('password-detail');
-
-
-
-
-$app->get('/password', function () use ($app,$fpdo) {
-	$accounts =  $fpdo->from('account')->where('user_id', 1)->orderBy('title')->fetchAll();
-
-    $app->render('list.html', array('accounts' =>  $accounts));
-})->name('password-list');
+})->name('account-detail');
 
 
 ?>
