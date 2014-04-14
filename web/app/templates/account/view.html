@@ -8,44 +8,50 @@
 {% endblock %}
 
 {% block content %}
-<div class="row">
-  <div class="col-xs-2"><strong>Title:</strong></div>
-  <div class="col-xs-2">
-    {{account.title}}
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-2"><strong>Description:</strong></div>
-  <div class="col-xs-2">
-    {{account.description}}
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-2"><strong>Address:</strong></div>
-  <div class="col-xs-2">
-    {{account.url}}
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-2"><strong>Username:</strong></div>
-  <div class="col-xs-2">
-    {{account.username}}
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-2"><strong>Password:</strong></div>
-  <div class="col-xs-2">
-    <a class="btn btn-default" href="#" id="view_password" role="button">View password &raquo;</a>
- 
-      <div id="password_plaintext">
-        <pre>{{account.password}}</pre>
-     </div>
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-2 control-label">Title</label>
+        <div class="col-xs-4">
+            {{account.title}}
+        </div>
+    </div>
 
-    
+    <div class="form-group">
+        <label class="col-xs-2 control-label">Description</label>
+        <div class="col-xs-4">
+            {{account.description}}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-2 control-label">Address</label>
+        <div class="col-xs-4">
+            {{account.url}}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-2 control-label">Username</label>
+        <div class="col-xs-4">
+            {{account.username}}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label  class="col-xs-2 control-label">Password</label>
+        <div class="col-xs-4">
+            <a class="btn btn-default" href="#" id="view_password" role="button">View password &raquo;</a>
+
+            <div id="password_plaintext">
+                <pre>{{account.password}}</pre>
+            </div>
+
+        </div>
 
 
-  </div>
+    </div>
 </div>
+
 {% endblock %}
 
 
