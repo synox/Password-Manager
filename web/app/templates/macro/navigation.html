@@ -2,7 +2,7 @@
     {# parameter example: ('account-list', router) #}
     {% spaceless %}
 
-    {% if pagename == router.getCurrentRoute().getName() %}
+    {% if router.getCurrentRoute() != null and pagename == router.getCurrentRoute().getName() %}
         active
     {% endif %}
 

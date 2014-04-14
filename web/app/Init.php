@@ -59,6 +59,11 @@ $fpdo->debug=function($BaseQuery) use ($app) {
     $app->log->debug($str);
 };
 
+$app->notFound(function () use ($app) {
+    $app->render('404.html');
+});
+
+
 
 $app->addRoutes(array(
         '/'                  => 'Home:index',

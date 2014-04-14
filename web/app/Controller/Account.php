@@ -25,8 +25,7 @@ class Account extends ProtectedController {
         $persistence = new AccountPersistence($this->app->fpdo);
         $account = $persistence->get($account_id, Permission::getUserid());
         if ($account == null) {
-            $this->app->response->header(404);
-            $this->render('404.html');
+            $this->app->notFound();
             return;
         }
 
@@ -74,11 +73,9 @@ class Account extends ProtectedController {
                 if (!$persistence->isAccountOfUser($account_id, Permission::getUserid()) ){
                     // account not found or wrong user
                     $this->app->log->error("wrong user: account.id=$account_id, current user_id=". Permission::getUserid());
-                    $this->app->response->header(404);
-                    $this->render('404.html');
+                    $this->app->notFound();
                     return;
                 }
-
                 $persistence->save(Permission::getUserid(), $account);
             }
 
