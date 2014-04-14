@@ -1,0 +1,10 @@
+{% macro isActivePage(pagename,router) %}
+    {# parameter example: ('account-list', router) #}
+    {% spaceless %}
+
+    {% if pagename == router.getCurrentRoute().getName() %}
+        active
+    {% endif %}
+
+{% endspaceless %}
+{% endmacro %}

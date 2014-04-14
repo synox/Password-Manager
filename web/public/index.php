@@ -38,6 +38,7 @@ $app->view->parserOptions = array(
 $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 
 $app->view->appendData(array('loggedin'=>\PasswordManager\Permission::isLoggedin()));
+$app->view->appendData(array('router'=>$app->router));
 
 function requiresLogin() {
     $app = \Slim\Slim::getInstance();
