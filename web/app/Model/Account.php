@@ -21,6 +21,13 @@ class Account  {
         }
         return $result;
     }
+    public function copyFromParams($params) {
+        foreach(array ('username', 'title', 'description','url','password') as $field){
+            if( isset($params[$field])){
+                $this->$field = $params[$field];
+            }
+        }
+    }
 
 
 } 

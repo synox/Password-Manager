@@ -1,14 +1,24 @@
 {% extends "base.html" %}
 
 {% block jumbotron %}
-<h1>Add Account</h1>
+{% if mode == 'edit' %}
+<p>Edit Account</p>
+{% else %}
+<p>Add Account</p>
+{% endif %}
+
 {% endblock %}
 
 {% block content %}
 
 {% import "macro/form.html" as form %}
 
+{% if mode == 'edit' %}
+<form class="form-horizontal" role="form" method="post" action="{{urlFor('Account:edit', {'id': account.id})}}">
+{% else %}
 <form class="form-horizontal" role="form" method="post" action="{{urlFor('Account:add')}}">
+{% endif %}
+
 
 
     {% if form_errors|length > 0 %}
@@ -91,11 +101,16 @@
         </div>
     </div>
 
-
     <div class="form-group">
         <div class="col-sm-2"></div>
         <div class="col-sm-4">
-            <button type="submit" class="btn btn-success">Add account</button>
+            <button type="submit" class="btn btn-success">
+            {% if mode == 'edit' %}
+            <span class="glyphicon glyphicon-save"></span> Save changes
+            {% else %}
+                <span class="glyphicon glyphicon-save"></span> Save account
+            {% endif %}
+            </button>
 
         </div>
     </div>

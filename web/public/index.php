@@ -65,8 +65,8 @@ $app->addRoutes(array(
         '/login/'            => array('get'=> 'User:loginForm',    'post' => 'User:login'),
         '/register/'         => array('get'=> 'User:registerForm', 'post' => 'User:register'),
         '/account/'          => array('get'=> 'Account:index'),
-        '/account/edit-ajax' => array('post'=> 'Account:editAjax'),
         '/account/add'       => array('get'=> 'Account:add',       'post' => 'Account:addPersist'),
+        '/account/:id/edit'  => array('any'=> 'Account:edit'),
         '/account/:id'       => array('get'=> 'Account:detail'),
         '/pw'                => 'Pw:gen',
 ));

@@ -28,6 +28,19 @@ class AccountPersistence {
         $query = $this->fpdo->insertInto('account', $data);
         return $query->execute();
     }
+    public function save($user_id, Account $account)
+    {
+        $account->user_id = $user_id;
+
+        // copy data to query
+        $data = array();
+        foreach(array('title', 'description', 'url', 'username', 'password_cipher') as $field) {
+            $data[$field] = $account->$field;
+        }
+
+        $query = $this->fpdo->update('account', $data)->where('user_id',$user_id)->where('id', $account->id);
+        return $query->execute();
+    }
 
     /**
      * Update a field on a given account
@@ -61,11 +74,16 @@ class AccountPersistence {
             return null;
         }
         $account = new Account();
-        foreach(array ('id', 'username', 'title', 'description','url','password_cipher') as $field){
+        foreach(array ('id', 'user_id', 'username', 'title', 'description','url','password_cipher') as $field){
             $account->$field = $result[$field];
         }
         return $account;
      }
+
+    public function isAccountOfUser($account_id, $user_id) {
+        $account = $this->get($account_id, $user_id);
+        return $account != null && $account->user_id == $user_id;
+    }
 
 }
 
