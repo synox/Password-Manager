@@ -28,7 +28,7 @@ class Crypto
 
     public static function encryptInformation($information, $encryptionKey)
     {
-        $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC);
+        $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_OFB);
         $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND);
         $method = 'aes128';
 
@@ -40,14 +40,14 @@ class Crypto
     public static function decryptInformation($cipherWithIvBase64, $encryptionKey)
     {
         $cipherWithIv = base64_decode($cipherWithIvBase64);
-        $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC);
+        $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_OFB);
         $method = 'aes128';
 
-        $iv2 = substr($cipherWithIv, 0, $iv_size);
+        $iv = substr($cipherWithIv, 0, $iv_size);
         $cipher = substr($cipherWithIv, $iv_size);
 
         // Decryption of the $cipher string
-        $decrypted = openssl_decrypt($cipher, $method, $encryptionKey, OPENSSL_RAW_DATA, $iv2);
+        $decrypted = openssl_decrypt($cipher, $method, $encryptionKey, OPENSSL_RAW_DATA, $iv);
         return $decrypted;
     }
 

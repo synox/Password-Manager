@@ -69,9 +69,10 @@
               {% endif %}
               {% if loggedin == true %}
               <ul class="nav navbar-nav navbar-right">
-                  <form class="navbar-form navbar-right" role="form">
-                      <a href="{{urlFor('User:logout')}}" class="btn btn-default" role="button"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
-                  </form>
+                  <div class="navbar-form">
+                      <a href="{{urlFor('User:settings')}}" class="btn btn-default" role="button"><span class="glyphicon glyphicon-cog"></span> Settings</a>
+                      <a href="{{urlFor('User:logout')}}" class="btn btn-default" role="button"><span class="glyphicon glyphicon-log-out"></span> Logout {{username}} </a>
+                  </div>
               </ul>
               {% endif %}
           </div><!--/.nav-collapse -->

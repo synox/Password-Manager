@@ -9,36 +9,36 @@
 
 {% block content %}
 <div class="row">
-  <div class="col-md-2">Title:</div>
-  <div class="col-md-2">
+  <div class="col-xs-2"><strong>Title:</strong></div>
+  <div class="col-xs-2">
     {{account.title}}
   </div>
 </div>
 <div class="row">
-  <div class="col-md-2">Description:</div>
-  <div class="col-md-2">
+  <div class="col-xs-2"><strong>Description:</strong></div>
+  <div class="col-xs-2">
     {{account.description}}
   </div>
 </div>
 <div class="row">
-  <div class="col-md-2">URL:</div>
-  <div class="col-md-2">
+  <div class="col-xs-2"><strong>Address:</strong></div>
+  <div class="col-xs-2">
     {{account.url}}
   </div>
 </div>
 <div class="row">
-  <div class="col-md-2">Username:</div>
-  <div class="col-md-2">
+  <div class="col-xs-2"><strong>Username:</strong></div>
+  <div class="col-xs-2">
     {{account.username}}
   </div>
 </div>
 <div class="row">
-  <div class="col-md-2">Password:</div>
-  <div class="col-md-2">
+  <div class="col-xs-2"><strong>Password:</strong></div>
+  <div class="col-xs-2">
     <a class="btn btn-default" href="#" id="view_password" role="button">View password &raquo;</a>
  
       <div id="password_plaintext">
-    <p> <pre>{{account.password}}</pre></p>
+        <pre>{{account.password}}</pre>
      </div>
 
     
@@ -61,5 +61,5 @@
       });
       
     });
-      </script>
+</script>
 {% endblock %}

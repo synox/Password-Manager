@@ -1,17 +1,16 @@
 {% extends "base.html" %}
 
 {% block jumbotron %}
-<h1>Change password</h1>
-<p>Here you can change the password of your account.</p>
+<h1>Settings</h1>
+<p>Here you can change your password.</p>
 {% endblock %}
 
 {% block content %}
 
 {% import "macro/form.html" as form %}
 
-<form class="form-horizontal" role="form" method="post" action="{{urlFor('User:register')}}">
-
-TODO!
+<h2>Change password</h2>
+<form class="form-horizontal" role="form" method="post" action="{{urlFor('User:changePw')}}">
 
     {% if form_errors|length > 0 %}
     <div class="form-group has-warning">
@@ -23,25 +22,25 @@ TODO!
     {% endif %}
 
     <div class="form-group {{form.print_error_class('username', form_errors)}}">
-        <label for="input_username" class="col-sm-2 control-label">Username</label>
+        <label for="old_password" class="col-sm-2 control-label">Current password</label>
         <div class="col-sm-4">
-            <input type="text"  name="username" class="form-control" id="input_username" placeholder="" value="{%if username is defined%}{{username}}{%endif%}">
-            {{ form.print_error('username', form_errors)}}
+            <input type="password"  name="old_password" class="form-control" id="old_password" placeholder="" value="">
+            {{ form.print_error('old_password', form_errors)}}
         </div>
     </div>
 
     <div class="form-group {{form.print_error_class('password', form_errors)}}">
-        <label for="input_password" class="col-sm-2 control-label">Password</label>
+        <label for="new_password" class="col-sm-2 control-label">New password</label>
         <div class="col-sm-4">
-            <input type="password"  name="password" class="form-control" id="input_password" placeholder="" value="">
-            {{ form.print_error('password', form_errors)}}
+            <input type="password"  name="new_password" class="form-control" id="new_password" placeholder="" value="">
+            {{ form.print_error('new_password', form_errors)}}
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-sm-2"></div>
         <div class="col-sm-4">
-            <button type="submit" class="btn btn-success">Register</button>
+            <button type="submit" class="btn btn-success">Change password</button>
 
         </div>
     </div>

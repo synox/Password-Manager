@@ -42,5 +42,10 @@ class UserPersistence {
 
     }
 
+    public function setNewPassword($user_id, $password) {
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        return $this->fpdo->update('user')->set('password_hash', $hash)->where('id', $user_id)->execute();
+    }
+
 
 } 

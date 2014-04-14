@@ -25,6 +25,10 @@ class Permission
     {
         $_SESSION['pm.password'] = $password;
     }
+   public static function setUsername($username)
+    {
+        $_SESSION['pm.username'] = $username;
+    }
 
     public static function setUserid($user_id)
     {
@@ -35,6 +39,14 @@ class Permission
     {
         if (isset($_SESSION['pm.password'])) {
             return $_SESSION['pm.password'];
+        } else {
+            return null;
+        }
+    }
+
+    public static function getUsername() {
+        if (isset($_SESSION['pm.username'])) {
+            return $_SESSION['pm.username'];
         } else {
             return null;
         }

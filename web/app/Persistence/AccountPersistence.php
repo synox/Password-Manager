@@ -12,7 +12,13 @@ class AccountPersistence {
     }
 
     public function listAll($user_id) {
-        $accounts = $this->fpdo->from('account')->where('user_id', $user_id)->orderBy('title')->fetchAll();
+        $result = $this->fpdo->from('account')->where('user_id', $user_id)->orderBy('title')->fetchAll();
+
+        $accounts = array();
+        foreach($result as $row) {
+            $account = $this->convertQueryRowToAccount($row);
+            $accounts[] = $account;
+        }
         return $accounts;
     }
 
@@ -74,16 +80,25 @@ class AccountPersistence {
         if($result == null) {
             return null;
         }
-        $account = new Account();
-        foreach(array ('id', 'user_id', 'username', 'title', 'description','url','password_cipher') as $field){
-            $account->$field = $result[$field];
-        }
+        $account = $this->convertQueryRowToAccount($result);
         return $account;
      }
 
     public function isAccountOfUser($account_id, $user_id) {
         $account = $this->get($account_id, $user_id);
         return $account != null && $account->user_id == $user_id;
+    }
+
+    /**
+     * @param $result
+     * @return Account
+     */
+    private function convertQueryRowToAccount($result) {
+        $account = new Account();
+        foreach (array('id', 'user_id', 'title', 'username', 'description', 'url', 'password_cipher') as $field) {
+            $account->$field = $result[$field];
+        }
+        return $account;
     }
 
 }

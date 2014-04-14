@@ -45,6 +45,7 @@ $app->view->parserOptions = array(
 $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 
 $app->view->appendData(array('loggedin'=>\PasswordManager\Permission::isLoggedin()));
+$app->view->appendData(array('username'=>\PasswordManager\Permission::getUsername()));
 $app->view->appendData(array('router'=>$app->router));
 
 // log db access
@@ -69,6 +70,8 @@ $app->addRoutes(array(
         '/account/:id/edit'  => 'Account:edit',
         '/account/:id'       => 'Account:view',
         '/pw'                => 'Pw:gen',
+        '/settings'                => 'User:settings',
+        '/settings/pw'                => 'User:changePw',
 ));
 
 // Run app
