@@ -12,7 +12,8 @@ class AccountPersistence {
     }
 
     public function listAll($user_id) {
-
+        $accounts = $this->fpdo->from('account')->where('user_id', $user_id)->orderBy('title')->fetchAll();
+        return $accounts;
     }
 
     public function persist($user_id, Account $account)

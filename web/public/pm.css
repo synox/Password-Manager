@@ -9,3 +9,7 @@
 .password_suggestion {
     font-family: ;
 }
+
+.navbar-form input {
+    width: 80px !important;
+}

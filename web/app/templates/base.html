@@ -49,7 +49,7 @@
           </div>
           <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                  <li class="{{nav.isActivePage('Pw:gen', router)}}"><a href="{{ urlFor('Pw:gen') }}"><span class="glyphicon glyphicon-random"></span> Generate Password</a></li>
+                  <li class="{{nav.isActivePage('Pw:gen', router)}}"><a href="{{ urlFor('Pw:gen') }}"><span class="glyphicon glyphicon-random"></span> PW Gen.</a></li>
                   <li class="{{nav.isActivePage('Account:index', router)}}"><a href="{{ urlFor('Account:index') }}"><span class="glyphicon glyphicon-align-justify"></span>  List</a></li>
                   <li class="{{nav.isActivePage('Account:add', router)}}"><a href="{{ urlFor('Account:add') }}"><span class="glyphicon glyphicon-plus"></span>  Add</a></li>
               </ul>
@@ -57,10 +57,10 @@
               <ul class="nav navbar-nav navbar-right">
                   <form class="navbar-form navbar-right" role="form" action="{{urlFor('User:login')}}" method="post">
                       <div class="form-group">
-                          <input type="text" name="username" placeholder="Username" class="form-control">
+                          <input type="text" name="username" placeholder="Username" class="form-control input-sm" >
                       </div>
                       <div class="form-group">
-                          <input type="password" name="password" placeholder="Password" class="form-control">
+                          <input type="password" name="password" placeholder="Password" class="form-control input-sm">
                       </div>
                       <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-log-in"></span> Sign in</button>
                       <a href="{{urlFor('User:register')}}" class="btn btn-info" role="button"><span class="glyphicon glyphicon-pencil"></span> Register</a>
