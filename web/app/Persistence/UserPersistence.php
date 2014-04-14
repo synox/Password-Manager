@@ -57,7 +57,7 @@ class UserPersistence {
 
         $bind_values = array('password_hash' => $hash, 'user_id' => $user_id);
         $sql = 'UPDATE user  SET password_hash = :password_hash ' .
-               'WHERE id = :user_id';
+            'WHERE id = :user_id';
         $sth = $this->pdo->perform($sql, $bind_values);
     }
 

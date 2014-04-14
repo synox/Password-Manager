@@ -2,7 +2,7 @@
 
 namespace PasswordManager\Model;
 
-class Account  {
+class Account {
     public $id;
     public $user_id;
     public $title;
@@ -14,16 +14,17 @@ class Account  {
 
     static public function fromParams($params) {
         $result = new Account();
-        foreach(array ('username', 'title', 'description','url','password') as $field){
-            if( isset($params[$field])){
+        foreach (array('username', 'title', 'description', 'url', 'password') as $field) {
+            if (isset($params[$field])) {
                 $result->$field = $params[$field];
             }
         }
         return $result;
     }
+
     public function copyFromParams($params) {
-        foreach(array ('username', 'title', 'description','url','password') as $field){
-            if( isset($params[$field])){
+        foreach (array('username', 'title', 'description', 'url', 'password') as $field) {
+            if (isset($params[$field])) {
                 $this->$field = $params[$field];
             }
         }

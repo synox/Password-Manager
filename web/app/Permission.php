@@ -4,15 +4,12 @@
 namespace PasswordManager;
 
 
-class Permission
-{
-    public static function isLoggedIn()
-    {
+class Permission {
+    public static function isLoggedIn() {
         return isset($_SESSION['pm.user_id']) && !is_null($_SESSION['pm.user_id']);
     }
 
-    public static function getUserid()
-    {
+    public static function getUserid() {
         if (isset($_SESSION['pm.user_id'])) {
             return $_SESSION['pm.user_id'];
         } else {
@@ -21,22 +18,19 @@ class Permission
 
     }
 
-    public static function setPassword($password)
-    {
+    public static function setPassword($password) {
         $_SESSION['pm.password'] = $password;
     }
-   public static function setUsername($username)
-    {
+
+    public static function setUsername($username) {
         $_SESSION['pm.username'] = $username;
     }
 
-    public static function setUserid($user_id)
-    {
+    public static function setUserid($user_id) {
         $_SESSION['pm.user_id'] = $user_id;
     }
 
-    public static function getPassword()
-    {
+    public static function getPassword() {
         if (isset($_SESSION['pm.password'])) {
             return $_SESSION['pm.password'];
         } else {

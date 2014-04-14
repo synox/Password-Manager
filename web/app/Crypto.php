@@ -4,30 +4,28 @@
 namespace PasswordManager;
 
 
-class Crypto
-{
+class Crypto {
 
-    static public function generatePasswords ($count) {
+    static public function generatePasswords($count) {
         $result = array();
 
         // Settings
-        $length=12;
-        $secure=false;
-        $numerals=true;
-        $capitalize=true;
-        $ambiguous=true; // avoid ambiguous characters
-        $no_vovels=false;
-        $symbols=false;
+        $length = 12;
+        $secure = false;
+        $numerals = true;
+        $capitalize = true;
+        $ambiguous = true; // avoid ambiguous characters
+        $no_vovels = false;
+        $symbols = false;
 
-        for($i = 0; $i < $count; $i++) {
+        for ($i = 0; $i < $count; $i++) {
             $result[] = new \PWGen($length, $secure, $numerals, $capitalize,
                 $ambiguous, $no_vovels, $symbols);
         }
         return $result;
     }
 
-    public static function encryptInformation($information, $encryptionKey)
-    {
+    public static function encryptInformation($information, $encryptionKey) {
         $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_OFB);
         $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND);
         $method = 'aes128';
@@ -37,8 +35,7 @@ class Crypto
         return base64_encode($cipherWithIv);
     }
 
-    public static function decryptInformation($cipherWithIvBase64, $encryptionKey)
-    {
+    public static function decryptInformation($cipherWithIvBase64, $encryptionKey) {
         $cipherWithIv = base64_decode($cipherWithIvBase64);
         $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_OFB);
         $method = 'aes128';

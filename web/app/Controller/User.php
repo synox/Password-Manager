@@ -87,6 +87,7 @@ class User extends ProtectedController {
         $this->app->view->appendData(array('form_errors' => array()));
         $this->app->render('user/settings.html');
     }
+
     public function changePwAction() {
         $this->checkLogin();
 
@@ -97,7 +98,7 @@ class User extends ProtectedController {
             $old_password = $this->app->request->params('old_password');
             $new_password = $this->app->request->params('new_password');
             $userPersistence = new \PasswordManager\Persistence\UserPersistence($this->app->pdo);
-            if(!$userPersistence->checkLogin(Permission::getUsername(), $old_password)) {
+            if (!$userPersistence->checkLogin(Permission::getUsername(), $old_password)) {
                 $v->error('old_password', 'Current Password is not correct.');
             } else {
                 // old password is correct, can now change password
@@ -108,9 +109,9 @@ class User extends ProtectedController {
                 $accountPersistence = new AccountPersistence($this->app->pdo);
                 $accounts = $accountPersistence->listAll(Permission::getUserid());
                 foreach ($accounts as $account) {
-                    $plaintext_pw  = Crypto::decryptInformation($account->password_cipher, $old_password);
+                    $plaintext_pw = Crypto::decryptInformation($account->password_cipher, $old_password);
                     $account->password_cipher = Crypto::encryptInformation($plaintext_pw, $new_password);
-                    $accountPersistence->updatePassword($account->id, Permission::getUserid(),$account->password_cipher);
+                    $accountPersistence->updatePassword($account->id, Permission::getUserid(), $account->password_cipher);
                 }
                 $accounts = null;
                 $this->app->flash('message', "Your password was changed successfully!");
@@ -121,8 +122,6 @@ class User extends ProtectedController {
 
         $this->app->view->appendData(array('form_errors' => $v->errors()));
         $this->app->render('user/settings.html');
-
-
 
 
     }

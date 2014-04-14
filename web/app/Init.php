@@ -17,8 +17,8 @@ require APP_PATH . '/vendor/autoload.php';
 // Prepare app
 $app = new \SlimController\Slim(array(
     'templates.path' => APP_PATH . '/app/templates',
-    'controller.class_prefix'    => '\\PasswordManager\\Controller',
-    'controller.method_suffix'   => 'Action',
+    'controller.class_prefix' => '\\PasswordManager\\Controller',
+    'controller.method_suffix' => 'Action',
     'controller.template_suffix' => 'html',
 ));
 
@@ -29,7 +29,7 @@ $app->pdo = new \Aura\Sql\ExtendedPdo('mysql:host=localhost;dbname=password-mana
 // (Singleton resources retrieve the same log resource definition each time)
 $app->container->singleton('log', function () {
     $log = new \Monolog\Logger('pm');
-    $log->pushHandler(new \Monolog\Handler\StreamHandler(APP_PATH. '/logs/app.log', \Monolog\Logger::DEBUG));
+    $log->pushHandler(new \Monolog\Handler\StreamHandler(APP_PATH . '/logs/app.log', \Monolog\Logger::DEBUG));
     return $log;
 });
 
@@ -37,21 +37,20 @@ $app->container->singleton('log', function () {
 $app->view(new \Slim\Views\Twig());
 $app->view->parserOptions = array(
     'charset' => 'utf-8',
-    'cache' => realpath(APP_PATH.'/cache'),
+    'cache' => realpath(APP_PATH . '/cache'),
     'auto_reload' => true,
     'strict_variables' => true,
     'autoescape' => true
 );
 $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 
-$app->view->appendData(array('loggedin'=>\PasswordManager\Permission::isLoggedin()));
-$app->view->appendData(array('username'=>\PasswordManager\Permission::getUsername()));
-$app->view->appendData(array('router'=>$app->router));
+$app->view->appendData(array('loggedin' => \PasswordManager\Permission::isLoggedin()));
+$app->view->appendData(array('username' => \PasswordManager\Permission::getUsername()));
+$app->view->appendData(array('router' => $app->router));
 
 $app->notFound(function () use ($app) {
     $app->render('404.html');
 });
-
 
 
 $app->addRoutes(array(
@@ -64,8 +63,8 @@ $app->addRoutes(array(
         '/account/:id/edit'  => 'Account:edit',
         '/account/:id'       => 'Account:view',
         '/pw'                => 'Pw:gen',
-        '/settings'                => 'User:settings',
-        '/settings/pw'                => 'User:changePw',
+        '/settings'          => 'User:settings',
+        '/settings/pw'       => 'User:changePw',
 ));
 
 // Run app

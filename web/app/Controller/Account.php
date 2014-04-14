@@ -38,7 +38,7 @@ class Account extends ProtectedController {
     public function editAction($account_id) {
         $this->checkLogin();
 
-        if($this->app->request->getMethod() == "GET") {
+        if ($this->app->request->getMethod() == "GET") {
             $persistence = new AccountPersistence($this->app->pdo);
             $account = $persistence->get($account_id, Permission::getUserid());
             $account->password = Crypto::decryptInformation($account->password_cipher, Permission::getPassword());
@@ -65,15 +65,15 @@ class Account extends ProtectedController {
             // encrypt password
             $account->password_cipher = Crypto::encryptInformation($account->password, Permission::getPassword());
 
-            if($account_id == 'new') {
+            if ($account_id == 'new') {
                 // create new
                 $persistence->persist(Permission::getUserid(), $account);
 
             } else {
                 // change existing
-                if (!$persistence->isAccountOfUser($account_id, Permission::getUserid()) ){
+                if (!$persistence->isAccountOfUser($account_id, Permission::getUserid())) {
                     // account not found or wrong user
-                    $this->app->log->error("wrong user: account.id=$account_id, current user_id=". Permission::getUserid());
+                    $this->app->log->error("wrong user: account.id=$account_id, current user_id=" . Permission::getUserid());
                     $this->app->notFound();
                     return;
                 }
@@ -88,7 +88,7 @@ class Account extends ProtectedController {
 
             // Render
             $this->app->view->appendData(array('example_passwords' => Crypto::generatePasswords(5)));
-            $this->app->render('account/edit.html', array('account' => $account, 'mode'=>'edit'));
+            $this->app->render('account/edit.html', array('account' => $account, 'mode' => 'edit'));
         }
     }
 
@@ -101,7 +101,7 @@ class Account extends ProtectedController {
     public function addAction() {
         $this->checkLogin();
 
-        if($this->app->request->getMethod() == "GET") {
+        if ($this->app->request->getMethod() == "GET") {
             $account = new \PasswordManager\Model\Account();
             $account->id = 'new';
             $this->editForm($account);
@@ -109,8 +109,6 @@ class Account extends ProtectedController {
             $this->editSave('new');
         }
     }
-
-
 
 
 }

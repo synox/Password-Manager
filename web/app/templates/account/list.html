@@ -2,16 +2,19 @@
 
 {% block jumbotron %}
 <p>These are your saved accounts:
-{% endblock %}
+    {% endblock %}
 
-{% block content %}
+    {% block content %}
 
-{% if accounts|length == 0 %}
+    {% if accounts|length == 0 %}
 <div class="row">
     <div class="col-md-8">
         <h2>Welcome to your accounts</h2>
+
         <p>The list is currently empty.</p>
-        <p ><a class="btn btn-success" href="{{urlFor('Account:add')}}" role="button">Add Account Information &raquo;</a></p>
+
+        <p><a class="btn btn-success" href="{{urlFor('Account:add')}}" role="button">Add Account Information &raquo;</a>
+        </p>
     </div>
 
 </div>
@@ -21,26 +24,27 @@
 
 
 <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Ttile</th>
-          <th>URL</th>
-          <th>Description</th>
-          <th>Username</th>
-          <th>Password</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for account in accounts %}
-        <tr>
-          <td>{{account.title}}</td>
-          <td>{{account.url}}</td>
-          <td>{{account.description}}</td>
-          <td>{{account.username}}</td>
-          <td>    <p><a href="{{ urlFor('Account:view', {'id': account.id}) }}" class="btn btn-default"   role="button">View details &raquo;</a>
-        </tr>
-       {% endfor %}
-      </tbody>
-    </table>
+    <thead>
+    <tr>
+        <th>Ttile</th>
+        <th>URL</th>
+        <th>Description</th>
+        <th>Username</th>
+        <th>Password</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for account in accounts %}
+    <tr>
+        <td>{{account.title}}</td>
+        <td>{{account.url}}</td>
+        <td>{{account.description}}</td>
+        <td>{{account.username}}</td>
+        <td><p><a href="{{ urlFor('Account:view', {'id': account.id}) }}" class="btn btn-default" role="button">View
+            details &raquo;</a>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
 {% endif %}
 {% endblock %}

@@ -17,15 +17,16 @@
     {% if form_errors|length > 0 %}
     <div class="form-group has-warning">
         <label class="col-sm-2 control-label">Warning:</label>
+
         <div class="col-sm-4">
             <p class="bg-warning">Please fix some small issues with your input.</p>
             {# note: disabled template because we no longer use this
 
-                {% for field_error in form_errors %}
-                    {% for error in field_error %}
-                        <p class="bg-warning">{{error}}</p>
-                    {% endfor %}
-                {% endfor %}
+            {% for field_error in form_errors %}
+            {% for error in field_error %}
+            <p class="bg-warning">{{error}}</p>
+            {% endfor %}
+            {% endfor %}
             #}
 
         </div>
@@ -35,22 +36,26 @@
 
     <div class="form-group {{form.print_error_class('title', form_errors)}}">
         <label for="input_title" class="col-sm-2 control-label">Title</label>
+
         <div class="col-sm-4">
-            <input type="text" name="title" class="form-control" id="input_title" placeholder="" value="{{account.title}}"/>
+            <input type="text" name="title" class="form-control" id="input_title" placeholder=""
+                   value="{{account.title}}"/>
             {{ form.print_error('title', form_errors)}}
         </div>
     </div>
 
     <div class="form-group {{form.print_error_class('description', form_errors)}}">
         <label for="input_desc" class="col-sm-2 control-label">Description</label>
+
         <div class="col-sm-4">
-            <textarea name="description" class="form-control" id="input_desc" >{{account.description}}</textarea>
+            <textarea name="description" class="form-control" id="input_desc">{{account.description}}</textarea>
             {{ form.print_error('description', form_errors)}}
         </div>
     </div>
 
     <div class="form-group {{form.print_error_class('url', form_errors)}}">
         <label for="input_url" class="col-sm-2 control-label">Address</label>
+
         <div class="col-sm-4">
             <input type="text" name="url" class="form-control" id="input_url" placeholder="" value="{{account.url}}">
             {{ form.print_error('url', form_errors)}}
@@ -59,16 +64,20 @@
 
     <div class="form-group {{form.print_error_class('username', form_errors)}}">
         <label for="input_username" class="col-sm-2 control-label">Username</label>
+
         <div class="col-sm-4">
-            <input type="text"  name="username" class="form-control" id="input_username" placeholder="" value="{{account.username}}">
+            <input type="text" name="username" class="form-control" id="input_username" placeholder=""
+                   value="{{account.username}}">
             {{ form.print_error('username', form_errors)}}
         </div>
     </div>
 
     <div class="form-group {{form.print_error_class('password', form_errors)}}">
         <label for="input_password" class="col-sm-2 control-label">Password</label>
+
         <div class="col-sm-4">
-            <input type="password"  name="password" class="form-control" id="input_password" placeholder="" value="{{account.password}}">
+            <input type="password" name="password" class="form-control" id="input_password" placeholder=""
+                   value="{{account.password}}">
             {{ form.print_error('password', form_errors)}}
         </div>
         <div class="col-sm-2">
@@ -86,7 +95,9 @@
                 </div>
                 <div class="panel-body password_suggestion">
                     {% for password in example_passwords %}
-                    <p><pre>{{password}}</pre></p>
+                    <p>
+                    <pre>{{password}}</pre>
+                    </p>
                     {% endfor %}
                 </div>
             </div>
@@ -98,7 +109,7 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-4">
             <button type="submit" class="btn btn-success">
-            <span class="glyphicon glyphicon-save"></span> Save changes
+                <span class="glyphicon glyphicon-save"></span> Save changes
             </button>
 
         </div>
@@ -113,9 +124,9 @@
 {% block extra_javascript %}
 
 <script>//turn to inline mode
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('#generate_password').click(function(event ){
+    $('#generate_password').click(function (event) {
         event.preventDefault();
         $("#password_suggestions").show();
         $("#generate_password").hide();
