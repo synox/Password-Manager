@@ -57,27 +57,18 @@ $fpdo->debug=function($BaseQuery) use ($app) {
     }
     $app->log->debug($str);
 };
-//
-//require APP_PATH.'/app/routes/home.php';
-//require APP_PATH.'/app/routes/user.php';
-//require APP_PATH.'/app/routes/account.php';
-//require APP_PATH.'/app/routes/pwgen.php';
 
 
 $app->addRoutes(array(
-    '/'            => 'Home:index',
-    '/logout'            => 'User:logout',
-    '/login/'            => array('get'=> array('User:loginForm'),
-                                  'post'=> array('User:login')),
-    '/register/'            => array('get'=> array('User:registerForm'),
-                                     'post'=> array('User:register')),
-    '/account/'            => array('get'=> array('Account:index')),
-    '/account/edit-ajax'            => array('post'=> array('Account:editAjax')),
-    '/account/add'            => array('get'=> array('Account:add'),
-                                       'post'=> array('Account:addPersist')
-                                 ),
-    '/account/:id'            => array('get'=> array('Account:detail')),
-    '/pw'            => array('get'=> array('Pw:gen')),
+        '/'                  => 'Home:index',
+        '/logout'            => 'User:logout',
+        '/login/'            => array('get'=> 'User:loginForm',    'post' => 'User:login'),
+        '/register/'         => array('get'=> 'User:registerForm', 'post' => 'User:register'),
+        '/account/'          => array('get'=> 'Account:index'),
+        '/account/edit-ajax' => array('post'=> 'Account:editAjax'),
+        '/account/add'       => array('get'=> 'Account:add',       'post' => 'Account:addPersist'),
+        '/account/:id'       => array('get'=> 'Account:detail'),
+        '/pw'                => 'Pw:gen',
 ));
 
 // Run app
