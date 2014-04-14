@@ -9,6 +9,7 @@ return array(
     'Valitron' => array($vendorDir . '/vlucas/valitron/src'),
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'Slim\\Views' => array($vendorDir . '/slim/views'),
+    'SlimController' => array($vendorDir . '/slimcontroller/slimcontroller/src'),
     'Slim' => array($vendorDir . '/slim/slim'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'PWGen' => array($vendorDir . '/roderik/pwgen-php'),

@@ -5,24 +5,31 @@ mb_http_output('UTF-8');
 session_cache_limiter(false);
 session_start();
 
+define('APP_PATH', dirname(__DIR__)); // PHP v5.3+
+
 
 // Report all PHP errors (see changelog)
 error_reporting(E_ALL);
 
-require '../vendor/autoload.php';
+require APP_PATH . '/vendor/autoload.php';
 
-require '../app/config/db.php';
 
 // Prepare app
-$app = new \Slim\Slim(array(
-    'templates.path' => '../app/templates',
+$app = new \SlimController\Slim(array(
+    'templates.path' => APP_PATH . '/app/templates',
+    'controller.class_prefix'    => '\\PasswordManager\\Controller',
+    'controller.method_suffix'   => 'Action',
+    'controller.template_suffix' => 'html',
 ));
+
+require APP_PATH . '/app/config/db.php';
+$app->fpdo = $fpdo;
 
 // Create monolog logger and store logger in container as singleton 
 // (Singleton resources retrieve the same log resource definition each time)
 $app->container->singleton('log', function () {
     $log = new \Monolog\Logger('pm');
-    $log->pushHandler(new \Monolog\Handler\StreamHandler('../logs/app.log', \Monolog\Logger::DEBUG));
+    $log->pushHandler(new \Monolog\Handler\StreamHandler(APP_PATH. '/logs/app.log', \Monolog\Logger::DEBUG));
     return $log;
 });
 
@@ -30,7 +37,7 @@ $app->container->singleton('log', function () {
 $app->view(new \Slim\Views\Twig());
 $app->view->parserOptions = array(
     'charset' => 'utf-8',
-    'cache' => realpath('../cache'),
+    'cache' => realpath(APP_PATH.'/cache'),
     'auto_reload' => true,
     'strict_variables' => true,
     'autoescape' => true
@@ -39,14 +46,6 @@ $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 
 $app->view->appendData(array('loggedin'=>\PasswordManager\Permission::isLoggedin()));
 $app->view->appendData(array('router'=>$app->router));
-
-function requiresLogin() {
-    $app = \Slim\Slim::getInstance();
-    if(!isset($_SESSION['pm.user_id'])){
-        $app->flash('error', 'Login required');
-        $app->redirect($app->urlFor('login'));
-    }
-}
 
 // log db access
 $fpdo->debug=function($BaseQuery) use ($app) {
@@ -58,12 +57,28 @@ $fpdo->debug=function($BaseQuery) use ($app) {
     }
     $app->log->debug($str);
 };
+//
+//require APP_PATH.'/app/routes/home.php';
+//require APP_PATH.'/app/routes/user.php';
+//require APP_PATH.'/app/routes/account.php';
+//require APP_PATH.'/app/routes/pwgen.php';
 
-require '../app/routes/home.php';
-require '../app/routes/user.php';
-require '../app/routes/account.php';
-require '../app/routes/pwgen.php';
 
+$app->addRoutes(array(
+    '/'            => 'Home:index',
+    '/logout'            => 'User:logout',
+    '/login/'            => array('get'=> array('User:loginForm'),
+                                  'post'=> array('User:login')),
+    '/register/'            => array('get'=> array('User:registerForm'),
+                                     'post'=> array('User:register')),
+    '/account/'            => array('get'=> array('Account:index')),
+    '/account/edit-ajax'            => array('post'=> array('Account:editAjax')),
+    '/account/add'            => array('get'=> array('Account:add'),
+                                       'post'=> array('Account:addPersist')
+                                 ),
+    '/account/:id'            => array('get'=> array('Account:detail')),
+    '/pw'            => array('get'=> array('Pw:gen')),
+));
 
 // Run app
 $app->run();

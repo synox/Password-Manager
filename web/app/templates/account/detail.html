@@ -52,7 +52,7 @@
 
 <script>//turn to inline mode
     $(document).ready(function() {
-      var url = '{{ urlFor('account-edit-ajax') }}';
+      var url = '{{ urlFor('Account:editAjax') }}';
       $('#title').editable({
         type: 'text',
         pk: {{account.id}},

@@ -6,9 +6,9 @@
 
 {% block content %}
 
-{% import "marco/form.html" as form %}
+{% import "macro/form.html" as form %}
 
-<form class="form-horizontal" role="form" method="post" action="{{urlFor('login-save')}}">
+<form class="form-horizontal" role="form" method="post" action="{{urlFor('User:login')}}">
 
 
     {% if form_errors|length > 0 %}

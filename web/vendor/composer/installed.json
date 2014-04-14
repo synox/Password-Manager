@@ -448,5 +448,54 @@
             "hashing",
             "password"
         ]
+    },
+    {
+        "name": "slimcontroller/slimcontroller",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fortrabbit/slimcontroller.git",
+            "reference": "fa2ce1899648d450ab8258f5a95046aa7df89bc8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fortrabbit/slimcontroller/zipball/fa2ce1899648d450ab8258f5a95046aa7df89bc8",
+            "reference": "fa2ce1899648d450ab8258f5a95046aa7df89bc8",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "slim/slim": "~2.4.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "0.8.*",
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2014-04-04 00:41:07",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "SlimController": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ulrich Kautz",
+                "email": "uk@fortrabbit.de",
+                "homepage": "http://fortrabbit.com/"
+            }
+        ],
+        "description": "Controller extensions for the Slim Framework",
+        "homepage": "http://github.com/fortrabbit/slimcontroller",
+        "keywords": [
+            "controller",
+            "microframework"
+        ]
     }
 ]

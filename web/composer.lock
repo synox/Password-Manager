@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "99147438566f39391e98094f7bd241db",
+    "hash": "39f104067bda12fe27fcfc1f9f82f19f",
     "packages": [
         {
             "name": "ircmaxell/password-compat",
@@ -338,6 +338,53 @@
             "time": "2014-04-03 16:31:10"
         },
         {
+            "name": "slimcontroller/slimcontroller",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fortrabbit/slimcontroller.git",
+                "reference": "fa2ce1899648d450ab8258f5a95046aa7df89bc8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fortrabbit/slimcontroller/zipball/fa2ce1899648d450ab8258f5a95046aa7df89bc8",
+                "reference": "fa2ce1899648d450ab8258f5a95046aa7df89bc8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "slim/slim": "~2.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.8.*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "SlimController": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ulrich Kautz",
+                    "email": "uk@fortrabbit.de",
+                    "homepage": "http://fortrabbit.com/"
+                }
+            ],
+            "description": "Controller extensions for the Slim Framework",
+            "homepage": "http://github.com/fortrabbit/slimcontroller",
+            "keywords": [
+                "controller",
+                "microframework"
+            ],
+            "time": "2014-04-04 00:41:07"
+        },
+        {
             "name": "twig/twig",
             "version": "v1.15.1",
             "source": {
@@ -446,6 +493,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "slimcontroller/slimcontroller": 20,
         "lichtner/fluentpdo": 20,
         "roderik/pwgen-php": 20,
         "vlucas/valitron": 20,
