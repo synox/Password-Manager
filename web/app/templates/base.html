@@ -7,7 +7,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="{{ baseUrl() }}/favicon.ico">
-    <link href="{{ baseUrl() }}/lib/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
     <link href="{{ baseUrl() }}/pm.css" rel="stylesheet">
 
 
@@ -15,6 +14,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ baseUrl() }}/lib/bootstrap-3.1/css/bootstrap.min.css" rel="stylesheet">
+    
 
     <!-- Custom styles for this template -->
     <link href="{{ baseUrl() }}/lib/bootstrap-jumbotron/jumbotron.css" rel="stylesheet">
@@ -50,7 +50,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="{{nav.isActivePage('Pw:gen', router)}}"><a href="{{ urlFor('Pw:gen') }}"><span
+                <li class="{{nav.isActivePage('Pwgen:gen', router)}}"><a href="{{ urlFor('Pwgen:gen') }}"><span
                         class="glyphicon glyphicon-random"></span> PW Gen.</a></li>
                 <li class="{{nav.isActivePage('Account:index', router)}}"><a href="{{ urlFor('Account:index') }}"><span
                         class="glyphicon glyphicon-align-justify"></span> List</a></li>
@@ -125,7 +125,6 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="{{ baseUrl() }}/lib/jquery/jquery-2.1.0.js"></script>
 <script src="{{ baseUrl() }}/lib/bootstrap-3.1/js/bootstrap.min.js"></script>
-<script src="{{ baseUrl() }}/lib/bootstrap3-editable/js/bootstrap-editable.js"></script>
 {% block extra_javascript %}
 {% endblock %}
 </body>

@@ -8,7 +8,7 @@ use PasswordManager\Persistence\AccountPersistence;
 use Valitron\Validator;
 
 
-class User extends ProtectedController {
+class UserController extends ProtectedController {
 
     public function registerFormAction() {
         $this->app->view->appendData(array('form_errors' => array()));

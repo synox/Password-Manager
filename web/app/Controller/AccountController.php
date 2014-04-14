@@ -8,7 +8,7 @@ use PasswordManager\Persistence\AccountPersistence;
 use Valitron\Validator;
 
 
-class Account extends ProtectedController {
+class AccountController extends ProtectedController {
 
     public function indexAction() {
         $this->checkLogin();
@@ -52,6 +52,7 @@ class Account extends ProtectedController {
     private function editSave($account_id) {
         $v = new Validator($this->app->request->params());
         $v->rule('required', ['title', 'url', 'username', 'password']);
+        $v->rule('url', 'url')->message('Wrong format. Should start with http://');
         $v->labels(array(
             'url' => 'Address',
         ));

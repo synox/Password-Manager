@@ -18,6 +18,7 @@ require APP_PATH . '/vendor/autoload.php';
 $app = new \SlimController\Slim(array(
     'templates.path' => APP_PATH . '/app/templates',
     'controller.class_prefix' => '\\PasswordManager\\Controller',
+    'controller.class_suffix' => 'Controller',
     'controller.method_suffix' => 'Action',
     'controller.template_suffix' => 'html',
 ));
@@ -62,7 +63,7 @@ $app->addRoutes(array(
         '/account/new'       => 'Account:add',
         '/account/:id/edit'  => 'Account:edit',
         '/account/:id'       => 'Account:view',
-        '/pw'                => 'Pw:gen',
+        '/pw'                => 'Pwgen:gen',
         '/settings'          => 'User:settings',
         '/settings/pw'       => 'User:changePw',
 ));

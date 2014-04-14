@@ -2,7 +2,7 @@
 
 namespace PasswordManager\Controller;
 
-class Home extends \SlimController\SlimController {
+class HomeController extends \SlimController\SlimController {
 
     public function indexAction() {
         // Sample log message
