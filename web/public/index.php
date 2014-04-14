@@ -11,11 +11,11 @@ error_reporting(E_ALL);
 
 require '../vendor/autoload.php';
 
-require '../lib/db.php';
+require '../app/config/db.php';
 
 // Prepare app
 $app = new \Slim\Slim(array(
-    'templates.path' => '../templates',
+    'templates.path' => '../app/templates',
 ));
 
 // Create monolog logger and store logger in container as singleton 
@@ -59,10 +59,10 @@ $fpdo->debug=function($BaseQuery) use ($app) {
     $app->log->debug($str);
 };
 
-require '../routes/home.php';
-require '../routes/user.php';
-require '../routes/account.php';
-require '../routes/pwgen.php';
+require '../app/routes/home.php';
+require '../app/routes/user.php';
+require '../app/routes/account.php';
+require '../app/routes/pwgen.php';
 
 
 // Run app

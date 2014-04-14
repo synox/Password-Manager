@@ -23,46 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="17" selection-start="1326" selection-end="1326" vertical-scroll-proportion="-10.625" vertical-offset="270" max-vertical-offset="2205">
+            <state line="50" column="16" selection-start="1369" selection-end="1369" vertical-scroll-proportion="-31.25" vertical-offset="0" max-vertical-offset="1110">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/account/detail.html">
+      <file leaf-file-name="composer.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="24" selection-start="342" selection-end="342" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="1455">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generate_passwords.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/generate_passwords.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="17" selection-start="205" selection-end="205" vertical-scroll-proportion="0.33860046" vertical-offset="0" max-vertical-offset="540">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navigation.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/macro/navigation.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="14" selection-start="242" selection-end="242" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="225">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/account/edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="17" selection-start="124" selection-end="124" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="1935">
+            <state line="16" column="0" selection-start="461" selection-end="461" vertical-scroll-proportion="0.54176074" vertical-offset="0" max-vertical-offset="443">
               <folding />
             </state>
           </provider>
@@ -93,7 +66,6 @@
         <option value="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
         <option value="$PROJECT_DIR$/src/Persistence/Account_persistence.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/Persistence/UserPersistence.php" />
         <option value="$PROJECT_DIR$/templates/register.html" />
         <option value="$PROJECT_DIR$/templates/edit.html" />
@@ -110,7 +82,6 @@
         <option value="$PROJECT_DIR$/routes/account.php" />
         <option value="$PROJECT_DIR$/src/Crypto.php" />
         <option value="$PROJECT_DIR$/routes/user.php" />
-        <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/templates/user/login.html" />
         <option value="$PROJECT_DIR$/templates/user/change_password.html" />
         <option value="$PROJECT_DIR$/templates/user/register.html" />
@@ -118,6 +89,8 @@
         <option value="$PROJECT_DIR$/templates/macro/navigation.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/generate_passwords.html" />
+        <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -216,138 +189,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="macro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Persistence" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -362,21 +203,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="logs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -399,11 +226,11 @@
       <recent name="$PROJECT_DIR$/templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/config" />
       <recent name="$PROJECT_DIR$/templates/macro" />
       <recent name="$PROJECT_DIR$/templates/user" />
       <recent name="$PROJECT_DIR$/templates/account" />
-      <recent name="$PROJECT_DIR$/src/Persistence" />
-      <recent name="$PROJECT_DIR$/src/Model" />
     </key>
   </component>
   <component name="RunManager">
@@ -453,9 +280,9 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -491,14 +318,7 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/account/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="33" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/edit.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/account/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="960">
           <folding />
@@ -512,21 +332,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="66" selection-start="1889" selection-end="1889" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1935">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/list.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/account/list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="73" selection-start="930" selection-end="981" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="690">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/account.php">
+    <entry file="file://$PROJECT_DIR$/app/routes/account.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="630">
           <folding />
@@ -542,7 +362,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/slim/slim/Slim/Middleware/Flash.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="31" selection-start="2053" selection-end="2053" vertical-scroll-proportion="0.2857143" vertical-offset="345" max-vertical-offset="2820" />
+        <state line="61" column="31" selection-start="2053" selection-end="2053" vertical-scroll-proportion="0.2857143" vertical-offset="345" max-vertical-offset="2820">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core_c.php">
@@ -567,7 +389,7 @@
         <state line="384" column="55" selection-start="12786" selection-end="12786" vertical-scroll-proportion="0.28432956" vertical-offset="5584" max-vertical-offset="6300" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/macro/form.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/macro/form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="14" selection-start="302" selection-end="302" vertical-scroll-proportion="0.20361991" vertical-offset="0" max-vertical-offset="663">
           <folding />
@@ -586,14 +408,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/db.php">
+    <entry file="file://$PROJECT_DIR$/app/config/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="27" selection-start="178" selection-end="178" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="225" />
+        <state line="6" column="27" selection-start="178" selection-end="178" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="225">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="687" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="687">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_files.php">
@@ -610,12 +436,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/vlucas/valitron/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="28" selection-start="592" selection-end="592" vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="450" />
+        <state line="20" column="28" selection-start="592" selection-end="592" vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="450">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/installed.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="380" column="23" selection-start="12373" selection-end="12373" vertical-scroll-proportion="-0.25307125" vertical-offset="5803" max-vertical-offset="6210" />
+        <state line="380" column="23" selection-start="12373" selection-end="12373" vertical-scroll-proportion="-0.25307125" vertical-offset="5803" max-vertical-offset="6210">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
@@ -640,15 +470,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="687" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="687">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="52" selection-start="192" selection-end="192" vertical-scroll-proportion="0.27088037" vertical-offset="0" max-vertical-offset="443" />
+        <state line="8" column="52" selection-start="192" selection-end="192" vertical-scroll-proportion="0.27088037" vertical-offset="0" max-vertical-offset="443">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Persistence/UserPersistence.php">
+    <entry file="file://$PROJECT_DIR$/app/Persistence/UserPersistence.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="26" selection-start="737" selection-end="737" vertical-scroll-proportion="0.4047619" vertical-offset="265" max-vertical-offset="765" />
       </provider>
@@ -663,73 +497,68 @@
         <state line="28" column="30" selection-start="685" selection-end="685" vertical-scroll-proportion="0.38809523" vertical-offset="257" max-vertical-offset="1950" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Permission.php">
+    <entry file="file://$PROJECT_DIR$/app/Permission.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="16" selection-start="756" selection-end="756" vertical-scroll-proportion="0.60714287" vertical-offset="300" max-vertical-offset="720">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Account.php">
+    <entry file="file://$PROJECT_DIR$/app/Model/Account.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="10" selection-start="312" selection-end="400" vertical-scroll-proportion="0.54176074" vertical-offset="0" max-vertical-offset="465" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/404.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="12" selection-start="61" selection-end="61" vertical-scroll-proportion="0.10714286" vertical-offset="0" max-vertical-offset="420" />
+        <state line="3" column="12" selection-start="61" selection-end="61" vertical-scroll-proportion="0.10714286" vertical-offset="0" max-vertical-offset="420">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Persistence/AccountPersistence.php">
+    <entry file="file://$PROJECT_DIR$/app/Persistence/AccountPersistence.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="15" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.53047407" vertical-offset="380" max-vertical-offset="1155" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/list.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/account/list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="8" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="525">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/home.php">
+    <entry file="file://$PROJECT_DIR$/app/routes/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="0" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="270">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/account.php">
+    <entry file="file://$PROJECT_DIR$/app/routes/account.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="27" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1620">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/pwgen.php">
+    <entry file="file://$PROJECT_DIR$/app/routes/pwgen.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="69" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="255">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Crypto.php">
+    <entry file="file://$PROJECT_DIR$/app/Crypto.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="35" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="900">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/user.php">
+    <entry file="file://$PROJECT_DIR$/app/routes/user.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="0" selection-start="38" selection-end="38" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="1305">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="18" selection-start="166" selection-end="175" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="435">
           <folding />
         </state>
       </provider>
@@ -741,65 +570,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="51" selection-start="1127" selection-end="1127" vertical-scroll-proportion="-8.875" vertical-offset="387" max-vertical-offset="1110">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/login.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/user/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="17" selection-start="118" selection-end="118" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="1140">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/change_password.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/user/change_password.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="17" selection-start="185" selection-end="185" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="1125">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/register.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/user/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="14" selection-start="597" selection-end="597" vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="1110">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/edit.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/account/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="124" selection-end="124" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="1935">
+        <state line="8" column="17" selection-start="124" selection-end="124" vertical-scroll-proportion="0.27906978" vertical-offset="0" max-vertical-offset="1935">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/macro/navigation.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/macro/navigation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="14" selection-start="242" selection-end="242" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="225">
+        <state line="9" column="14" selection-start="242" selection-end="242" vertical-scroll-proportion="0.3047404" vertical-offset="0" max-vertical-offset="443">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/account/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="17" selection-start="1326" selection-end="1326" vertical-scroll-proportion="-10.625" vertical-offset="270" max-vertical-offset="2205">
+        <state line="15" column="24" selection-start="342" selection-end="342" vertical-scroll-proportion="0.50790066" vertical-offset="0" max-vertical-offset="1455">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="24" selection-start="342" selection-end="342" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="1455">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/generate_passwords.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/generate_passwords.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="17" selection-start="205" selection-end="205" vertical-scroll-proportion="0.33860046" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="40" selection-start="2663" selection-end="2663" vertical-scroll-proportion="-8.125" vertical-offset="645" max-vertical-offset="2205">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/app.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="16" selection-start="1369" selection-end="1369" vertical-scroll-proportion="-31.25" vertical-offset="0" max-vertical-offset="1110">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="461" selection-end="461" vertical-scroll-proportion="0.54176074" vertical-offset="0" max-vertical-offset="443">
           <folding />
         </state>
       </provider>
