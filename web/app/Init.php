@@ -22,8 +22,8 @@ $app = new \SlimController\Slim(array(
     'controller.template_suffix' => 'html',
 ));
 
-require APP_PATH . '/app/config/db.php';
-$app->fpdo = $fpdo;
+// connect database
+$app->pdo = new \Aura\Sql\ExtendedPdo('mysql:host=localhost;dbname=password-manager;charset=utf8', 'root', 'root');
 
 // Create monolog logger and store logger in container as singleton 
 // (Singleton resources retrieve the same log resource definition each time)
@@ -47,17 +47,6 @@ $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 $app->view->appendData(array('loggedin'=>\PasswordManager\Permission::isLoggedin()));
 $app->view->appendData(array('username'=>\PasswordManager\Permission::getUsername()));
 $app->view->appendData(array('router'=>$app->router));
-
-// log db access
-$fpdo->debug=function($BaseQuery) use ($app) {
-
-    $str = "query: " . $BaseQuery->getQuery(false) . "\n";
-    $str .= "parameters: " . implode(', ', $BaseQuery->getParameters()) . "\n";
-    if($BaseQuery->getResult() != null) {
-       $str .= "rowCount: " . $BaseQuery->getResult()->rowCount();
-    }
-    $app->log->debug($str);
-};
 
 $app->notFound(function () use ($app) {
     $app->render('404.html');

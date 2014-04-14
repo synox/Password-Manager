@@ -9,7 +9,7 @@
         "slimcontroller/slimcontroller": "dev-master",
         "slim/views": "0.*",
         "twig/twig": "1.*",
-        "lichtner/fluentpdo": "dev-master",
+        "aura/sql": "2.*",
         "monolog/monolog": "1.*",
         "roderik/pwgen-php": "dev-master",
         "vlucas/valitron": "dev-master",

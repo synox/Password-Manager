@@ -12,7 +12,7 @@ class Account extends ProtectedController {
 
     public function indexAction() {
         $this->checkLogin();
-        $persistence = new AccountPersistence($this->app->fpdo);
+        $persistence = new AccountPersistence($this->app->pdo);
 
         $accounts = $persistence->listAll(Permission::getUserid());
 
@@ -22,7 +22,7 @@ class Account extends ProtectedController {
     public function viewAction($account_id) {
         $this->checkLogin();
 
-        $persistence = new AccountPersistence($this->app->fpdo);
+        $persistence = new AccountPersistence($this->app->pdo);
         $account = $persistence->get($account_id, Permission::getUserid());
         if ($account == null) {
             $this->app->notFound();
@@ -39,8 +39,9 @@ class Account extends ProtectedController {
         $this->checkLogin();
 
         if($this->app->request->getMethod() == "GET") {
-            $persistence = new AccountPersistence($this->app->fpdo);
+            $persistence = new AccountPersistence($this->app->pdo);
             $account = $persistence->get($account_id, Permission::getUserid());
+            $account->password = Crypto::decryptInformation($account->password_cipher, Permission::getPassword());
             $this->editForm($account);
         } else {
             $this->editSave($account_id);
@@ -59,7 +60,7 @@ class Account extends ProtectedController {
         $account->id = $account_id;
 
         if ($v->validate()) {
-            $persistence = new AccountPersistence($this->app->fpdo);
+            $persistence = new AccountPersistence($this->app->pdo);
 
             // encrypt password
             $account->password_cipher = Crypto::encryptInformation($account->password, Permission::getPassword());

@@ -29,9 +29,9 @@ class User extends ProtectedController {
         $v->rule('lengthMin', 'password', 4);
 
         if ($v->validate()) {
-            $userPersistence = new \PasswordManager\Persistence\UserPersistence($this->app->fpdo);
+            $userPersistence = new \PasswordManager\Persistence\UserPersistence($this->app->pdo);
 
-            if ($userPersistence->register($username, $password)) {
+            if ($userPersistence->create($username, $password)) {
                 $this->app->flash('message', "The registration was successful. You can now log in!");
                 $this->app->redirect($this->app->urlFor("User:login"));
             } else {
@@ -56,15 +56,14 @@ class User extends ProtectedController {
         $v->rule('required', ['username', 'password']);
         if ($v->validate()) {
             // check username psw
-            $userPersistence = new \PasswordManager\Persistence\UserPersistence($this->app->fpdo);
-            $user_id = $userPersistence->checkLogin($this->app->request->params('username'), $this->app->request->params('password'));
-            $this->app->log->debug("userid: " . $user_id);
-            if ($user_id != null) {
-                Permission::setUserid($user_id);
+            $userPersistence = new \PasswordManager\Persistence\UserPersistence($this->app->pdo);
+            $user = $userPersistence->checkLogin($this->app->request->params('username'), $this->app->request->params('password'));
+            if ($user != null) {
+                Permission::setUserid($user->id);
                 Permission::setPassword($this->app->request->params('password'));
                 Permission::setUsername($this->app->request->params('username'));
                 $this->app->flash('message', "You are now logged in.");
-                $this->app->log->debug("login done, id=" . $user_id);
+                $this->app->log->debug("login done, id=" . $user->id);
                 $this->app->log->debug("session: =" . var_dump($_SESSION));
                 $this->app->redirect($this->app->urlFor("Account:index"));
             } else {
@@ -97,7 +96,7 @@ class User extends ProtectedController {
         if ($v->validate()) {
             $old_password = $this->app->request->params('old_password');
             $new_password = $this->app->request->params('new_password');
-            $userPersistence = new \PasswordManager\Persistence\UserPersistence($this->app->fpdo);
+            $userPersistence = new \PasswordManager\Persistence\UserPersistence($this->app->pdo);
             if(!$userPersistence->checkLogin(Permission::getUsername(), $old_password)) {
                 $v->error('old_password', 'Current Password is not correct.');
             } else {
@@ -106,12 +105,12 @@ class User extends ProtectedController {
                 Permission::setPassword($new_password);
 
                 // reencrypt accounts
-                $accountPersistence = new AccountPersistence($this->app->fpdo);
+                $accountPersistence = new AccountPersistence($this->app->pdo);
                 $accounts = $accountPersistence->listAll(Permission::getUserid());
                 foreach ($accounts as $account) {
                     $plaintext_pw  = Crypto::decryptInformation($account->password_cipher, $old_password);
                     $account->password_cipher = Crypto::encryptInformation($plaintext_pw, $new_password);
-                    $accountPersistence->updateValue($account->id, Permission::getUserid(), 'password_cipher', $account->password_cipher);
+                    $accountPersistence->updatePassword($account->id, Permission::getUserid(),$account->password_cipher);
                 }
                 $accounts = null;
                 $this->app->flash('message', "Your password was changed successfully!");

@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'PasswordManager\\' => array($baseDir . '/app'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+    'Aura\\Sql\\' => array($vendorDir . '/aura/sql/src'),
 );

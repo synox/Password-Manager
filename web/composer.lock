@@ -3,8 +3,61 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "39f104067bda12fe27fcfc1f9f82f19f",
+    "hash": "6c7d91fbed58d825e5e3ae570efeff19",
     "packages": [
+        {
+            "name": "aura/sql",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/auraphp/Aura.Sql.git",
+                "reference": "92fefa64dcfb5c2acf168e5632d4af5746e3637e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/auraphp/Aura.Sql/zipball/92fefa64dcfb5c2acf168e5632d4af5746e3637e",
+                "reference": "92fefa64dcfb5c2acf168e5632d4af5746e3637e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "aura": {
+                    "type": "library"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Aura\\Sql\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Aura.Sql Contributors",
+                    "homepage": "https://github.com/auraphp/Aura.Sql/contributors"
+                }
+            ],
+            "description": "A PDO extension that provides lazy connections, array quoting, identifier quoting, query profiling, value binding, and convenience methods for common fetch styles. Because it extends PDO, existing code that uses PDO can use this without any changes to the existing code.",
+            "homepage": "https://github.com/auraphp/Aura.Sql/releases",
+            "keywords": [
+                "mysql",
+                "pdo",
+                "pgsql",
+                "postgres",
+                "postgresql",
+                "sql server",
+                "sqlite",
+                "sqlserver",
+                "sqlsrv"
+            ],
+            "time": "2014-04-08 14:17:53"
+        },
         {
             "name": "ircmaxell/password-compat",
             "version": "dev-master",
@@ -46,46 +99,6 @@
                 "password"
             ],
             "time": "2014-03-21 11:47:21"
-        },
-        {
-            "name": "lichtner/fluentpdo",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lichtner/fluentpdo.git",
-                "reference": "26d6a5b9dda8a94d14b2ac037caf10362f92b487"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lichtner/fluentpdo/zipball/26d6a5b9dda8a94d14b2ac037caf10362f92b487",
-                "reference": "26d6a5b9dda8a94d14b2ac037caf10362f92b487",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "FluentPDO/FluentPDO.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0",
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Marek Lichtner",
-                    "homepage": "http://licht.sk/"
-                }
-            ],
-            "description": "FluentPDO is small PHP library for rapid query building. Killer feature is smart join builder which generates joins automatically.",
-            "homepage": "http://fluentpdo.com/",
-            "keywords": [
-                "database",
-                "dbal",
-                "pdo"
-            ],
-            "time": "2014-01-09 20:25:56"
         },
         {
             "name": "monolog/monolog",
@@ -343,12 +356,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fortrabbit/slimcontroller.git",
-                "reference": "fa2ce1899648d450ab8258f5a95046aa7df89bc8"
+                "reference": "f9306eac173671544025b3febe3c5f146ac973e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fortrabbit/slimcontroller/zipball/fa2ce1899648d450ab8258f5a95046aa7df89bc8",
-                "reference": "fa2ce1899648d450ab8258f5a95046aa7df89bc8",
+                "url": "https://api.github.com/repos/fortrabbit/slimcontroller/zipball/f9306eac173671544025b3febe3c5f146ac973e8",
+                "reference": "f9306eac173671544025b3febe3c5f146ac973e8",
                 "shasum": ""
             },
             "require": {
@@ -382,7 +395,7 @@
                 "controller",
                 "microframework"
             ],
-            "time": "2014-04-04 00:41:07"
+            "time": "2014-04-14 19:26:29"
         },
         {
             "name": "twig/twig",
@@ -447,12 +460,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/valitron.git",
-                "reference": "430a8324ece573e338ef68cb68e368f66fddb0d7"
+                "reference": "2120bacaf54e8bc942cf8b6984e325c36fde0238"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/valitron/zipball/430a8324ece573e338ef68cb68e368f66fddb0d7",
-                "reference": "430a8324ece573e338ef68cb68e368f66fddb0d7",
+                "url": "https://api.github.com/repos/vlucas/valitron/zipball/2120bacaf54e8bc942cf8b6984e325c36fde0238",
+                "reference": "2120bacaf54e8bc942cf8b6984e325c36fde0238",
                 "shasum": ""
             },
             "require": {
@@ -482,7 +495,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2014-04-10 15:53:37"
+            "time": "2014-04-14 14:55:10"
         }
     ],
     "packages-dev": [
@@ -494,7 +507,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "slimcontroller/slimcontroller": 20,
-        "lichtner/fluentpdo": 20,
         "roderik/pwgen-php": 20,
         "vlucas/valitron": 20,
         "ircmaxell/password-compat": 20

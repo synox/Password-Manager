@@ -3,48 +3,62 @@
 namespace PasswordManager\Persistence;
 
 
-class UserPersistence {
-    private $fpdo;
+use Aura\Sql\ExtendedPdo;
 
-    public function __construct($fpdo) {
-        $this->fpdo = $fpdo;
+class UserPersistence {
+    private $pdo;
+
+    public function __construct(ExtendedPdo $pdo) {
+        $this->pdo = $pdo;
     }
 
     public function checkLogin($username, $password) {
-        $user =  $this->fpdo->from('user')->where('username', $username)->fetch();
-        if($user == null) {
+        $user = $this->getByUsername($username);
+
+        if ($user == null) {
             return false;
         }
 
-        if( password_verify($password, $user['password_hash']) ) {
-            return $user['id'];
-        }  else {
+        // Compare password with hash
+        if (password_verify($password, $user->password_hash)) {
+            return $user;
+        } else {
             return null;
         }
-
-        return null;
-
-    }
-    private function createUser($username, $hash) {
-        $query = $this->fpdo->insertInto('user', array('username' => $username, 'password_hash'=>$hash));
-        $query->execute();
     }
 
-    public function register($username, $password) {
-        $user =  $this->fpdo->from('user')->where('username', $username)->fetch();
-        if($user != null) {
+    public function getByUsername($username) {
+        $sql = 'SELECT * from user WHERE username = :username ';
+        $bind = array('username' => $username);
+        $user = $this->pdo->fetchObject($sql, $bind, 'PasswordManager\Model\User');
+        return $user;
+    }
+
+    public function create($username, $password) {
+        $user = $this->getByUsername($username);
+        if ($user != null) {
             return false;
         }
         $hash = password_hash($password, PASSWORD_DEFAULT);
         $this->createUser($username, $hash);
         return true;
+    }
 
+    private function createUser($username, $hash) {
+        $bind_values = array('username' => $username, 'password_hash' => $hash);
 
+        $sql = 'INSERT INTO user (username,  password_hash) ' .
+            'VALUES(:username, :password_hash)';
+        $sth = $this->pdo->perform($sql, $bind_values);
     }
 
     public function setNewPassword($user_id, $password) {
         $hash = password_hash($password, PASSWORD_DEFAULT);
-        return $this->fpdo->update('user')->set('password_hash', $hash)->where('id', $user_id)->execute();
+
+        $bind_values = array('password_hash' => $hash, 'user_id' => $user_id);
+        $sql = 'UPDATE user  SET password_hash = :password_hash ' .
+               'WHERE id = :user_id';
+        $sth = $this->pdo->perform($sql, $bind_values);
     }
 
 
