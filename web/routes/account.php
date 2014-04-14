@@ -2,15 +2,16 @@
 
 use PasswordManager\Permission;
 use PasswordManager\Persistence\AccountPersistence;
+use PasswordManager\Crypto;
 
 // Route for adding a new account
 $app->get('/account/add', 'requiresLogin', function () use ($app, $fpdo) {
     $app->view->appendData(array('form_errors' => array()));
-    $app->view->appendData(array('example_passwords' => CryptoHelper::generatePasswords(5)));
+    $app->view->appendData(array('example_passwords' => Crypto::generatePasswords(5)));
 
     $account = new \PasswordManager\Model\Account();
 
-    $app->render('edit.html', array('account' => $account));
+    $app->render('account/edit.html', array('account' => $account));
 })->name('account-add');
 
 
@@ -27,7 +28,11 @@ $app->post('/account/add', 'requiresLogin', function () use ($app, $fpdo) {
 
     if($v->validate()) {
         $persistence = new \PasswordManager\Persistence\AccountPersistence($fpdo);
-        $persistence->persist(\PasswordManager\Permission::getUserid(), $account);
+
+        // encrypt password
+        $account->password_cipher = Crypto::encryptInformation($account->password, Permission::getPassword());
+
+        $persistence->persist(Permission::getUserid(), $account);
 
         $app->flash('message', "Account has been added.");
         $app->redirect($app->urlFor("account-list"));
@@ -37,8 +42,8 @@ $app->post('/account/add', 'requiresLogin', function () use ($app, $fpdo) {
         $app->view->appendData(array('form_errors' => $v->errors()));
 
         // Render
-        $app->view->appendData(array('example_passwords' => CryptoHelper::generatePasswords(5)));
-        $app->render('edit.html', array('account' => $account));
+        $app->view->appendData(array('example_passwords' => Crypto::generatePasswords(5)));
+        $app->render('account/edit.html', array('account' => $account));
     }
 
 })->name('account-add-save');
@@ -75,16 +80,23 @@ $app->post('/account/edit-ajax', 'requiresLogin', function () use ($app,$fpdo) {
 $app->get('/account/list', 'requiresLogin', function () use ($app,$fpdo) {
     $accounts =  $fpdo->from('account')->where('user_id', Permission::getUserid())->orderBy('title')->fetchAll();
 
-    $app->render('list.html', array('accounts' =>  $accounts));
+    $app->render('account/list.html', array('accounts' =>  $accounts));
 })->name('account-list');
 
 
 $app->get('/account/:id', 'requiresLogin', function ($account_id) use ($app, $fpdo) {
-	$account =  $fpdo->from('account')->where('user_id', Permission::getUserid())->where('id', $account_id)->orderBy('title')->fetch();
+    $persistence = new AccountPersistence($fpdo);
+    $account = $persistence->get($account_id, Permission::getUserid());
+    if($account==null) {
+        $app->response->header(404);
+        $app->render('404.html');
+        return;
+    }
 
-	$account['password_plaintext'] = "hallo";
+    // decrypt password
+    $account->password = Crypto::decryptInformation($account->password_cipher, Permission::getPassword());
 
-    $app->render('detail.html', array('account'=>$account));
+    $app->render('account/detail.html', array('account'=>$account));
 })->name('account-detail');
 
 

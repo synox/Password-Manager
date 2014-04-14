@@ -10,6 +10,7 @@ class Account  {
     public $url;
     public $username;
     public $password;
+    public $password_cipher;
 
     static public function fromParams($params) {
         $result = new Account();

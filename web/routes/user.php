@@ -2,21 +2,13 @@
 
 use PasswordManager\Permission;
 
-// Define routes
-$app->get('/', function () use ($app) {
-    // Sample log message
-    $app->log->info("Slim-Skeleton '/' route");
-    // Render index view
-    $app->render('index.html', array('name'=>'nobody'));
-})->name('home');
-
 
 
 $app->get('/register', function () use ($app) {
     $app->view->appendData(array('form_errors' => array()));
     $app->view->appendData(array('username' => ''));
 
-    $app->render('register.html');
+    $app->render('user/register.html');
 })->name('register');
 
 $app->post('/register', function () use ($app,$fpdo) {
@@ -43,7 +35,7 @@ $app->post('/register', function () use ($app,$fpdo) {
 
     // on error
     $app->view->appendData(array('form_errors' => $v->errors()));
-    $app->render('register.html');
+    $app->render('user/register.html');
 
 })->name('register-save');
 
@@ -51,7 +43,7 @@ $app->post('/register', function () use ($app,$fpdo) {
 $app->get('/login', function () use ($app) {
     $app->view->appendData(array('form_errors' => array()));
 
-    $app->render('login.html');
+    $app->render('user/login.html');
 })->name('login');
 
 $app->post('/login', function () use ($app,$fpdo) {
@@ -68,7 +60,7 @@ $app->post('/login', function () use ($app,$fpdo) {
             $app->flash('message', "You are now logged in.");
             $app->log->debug("login done, id=" . $user_id);
             $app->log->debug("session: =" . var_dump($_SESSION));
-            //$app->redirect($app->urlFor("account-list"));
+            $app->redirect($app->urlFor("account-list"));
         } else {
             // login failed
             $v->error('username', 'Invalid username or password');
@@ -77,7 +69,7 @@ $app->post('/login', function () use ($app,$fpdo) {
     }
 
     $app->view->appendData(array('form_errors' => $v->errors()));
-    $app->render('login.html');
+    $app->render('user/login.html');
 
 })->name('login-save');
 

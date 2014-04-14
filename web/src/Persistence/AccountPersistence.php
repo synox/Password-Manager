@@ -21,7 +21,7 @@ class AccountPersistence {
 
         // copy data to query
         $data = array();
-        foreach(array('user_id', 'title', 'description', 'url', 'username') as $field) {
+        foreach(array('user_id', 'title', 'description', 'url', 'username', 'password_cipher') as $field) {
             $data[$field] = $account->$field;
         }
 
@@ -43,6 +43,29 @@ class AccountPersistence {
         $query = $query->set($field, $value);
         return $query->execute();
     }
+
+    /**
+     * Load an account with the given id and user_id
+     * @param $account_id a account id
+     * @param $user_id a userid
+     * @return null|Account
+     */
+    public function get($account_id, $user_id)
+    {
+        $result =  $this->fpdo->from('account')
+            ->where('user_id', $user_id)
+            ->where('id', $account_id)
+            ->fetch();
+
+        if($result == null) {
+            return null;
+        }
+        $account = new Account();
+        foreach(array ('id', 'username', 'title', 'description','url','password_cipher') as $field){
+            $account->$field = $result[$field];
+        }
+        return $account;
+     }
 
 }
 

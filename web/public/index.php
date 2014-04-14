@@ -58,9 +58,10 @@ $fpdo->debug=function($BaseQuery) use ($app) {
     $app->log->debug($str);
 };
 
+require '../routes/home.php';
+require '../routes/user.php';
 require '../routes/account.php';
-require '../routes/crypto.php';
-require '../routes/site.php';
+require '../routes/pwgen.php';
 
 
 // Run app

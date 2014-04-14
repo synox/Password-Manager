@@ -22,20 +22,9 @@
           <td>{{account.url}}</td>
           <td>{{account.description}}</td>
           <td>{{account.username}}</td>
-          <td>   <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p></td>
+          <td>    <p><a href="{{ urlFor('account-detail', {"id": account.id}) }}" class="btn btn-default"   role="button">View details &raquo;</a>
         </tr>
        {% endfor %}
       </tbody>
     </table>
-
-	<div class="row">
-	 {% for account in accounts %}
-	  <div class="col-md-4">
-          <h2><a href="{{account.url}}">{{account.title}}</a></h2>
-          <p>{{account.description}} </p>
-          <p><a href="{{ urlFor('account-detail', {"id": account.id}) }}" class="btn btn-default"   role="button">View details &raquo;</a>
-
-        </div>
-       {% endfor %}
-    </div>
 {% endblock %}

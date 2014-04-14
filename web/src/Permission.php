@@ -31,4 +31,13 @@ class Permission
         $_SESSION['pm.user_id'] = $user_id;
     }
 
+    public static function getPassword()
+    {
+        if (isset($_SESSION['pm.password'])) {
+            return $_SESSION['pm.password'];
+        } else {
+            return null;
+        }
+    }
+
 } 
