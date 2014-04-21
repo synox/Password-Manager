@@ -9,3 +9,8 @@
 .navbar-form input {
     width: 80px !important;
 }
+
+.list-item {
+    margin: 10px;
+    padding: 10px;
+}

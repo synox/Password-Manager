@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
 {% block jumbotron %}
-<p>These are your saved accounts:
+<p>These are your accounts.
+    <a class="btn btn-success" href="{{urlFor('Account:add')}}" role="button">
+        <i class="fa fa-plus-circle"></i> Add account</a>
+
     {% endblock %}
 
     {% block content %}
@@ -13,7 +16,10 @@
 
         <p>The list is currently empty.</p>
 
-        <p><a class="btn btn-success" href="{{urlFor('Account:add')}}" role="button">Add Account Information &raquo;</a>
+        <p>
+            <a class="btn btn-success" href="{{urlFor('Account:add')}}" role="button">
+                <i class="fa fa-plus-circle"></i> Add account</a>
+
         </p>
     </div>
 
@@ -23,28 +29,36 @@
 {%  else %}
 
 
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>Ttile</th>
-        <th>URL</th>
-        <th>Description</th>
-        <th>Username</th>
-        <th>Password</th>
-    </tr>
-    </thead>
-    <tbody>
+
+<div class="row">
     {% for account in accounts %}
-    <tr>
-        <td>{{account.title}}</td>
-        <td>{{account.url}}</td>
-        <td>{{account.description}}</td>
-        <td>{{account.username}}</td>
-        <td><p><a href="{{ urlFor('Account:view', {'id': account.id}) }}" class="btn btn-default" role="button">View
-            details &raquo;</a>
+        <div class="col-sm-4 list-item well">
+            <a href="{{ urlFor('Account:view', {'id': account.id}) }}">
+                <h4>{{account.title}} <small>{{account.description}}</small></h4> </a>
+                <p>{{account.username}} @
+                    {% if account.url|length >= 20 %}
+                    {{account.url|slice(0,20)}}...
+                    {% else %}
+                    {{account.url}}
+                    {% endif %}
+                </p>
+                <p>
+                    <a href="{{ urlFor('Account:view', {'id': account.id}) }}" class="btn btn-default" role="button">
+                        <i class="fa fa-search-plus"></i> View details</a>
+                </p>
+
+        </div>
+
+<!--
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><p>
     </tr>
+    -->
     {% endfor %}
-    </tbody>
-</table>
+</div>
+
 {% endif %}
 {% endblock %}

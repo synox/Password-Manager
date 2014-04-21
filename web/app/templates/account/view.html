@@ -2,11 +2,11 @@
 
 {% block jumbotron %}
 <p>{{account.title}}</p>
-<a class="btn btn-primary" href="{{urlFor('Account:edit', {'id': account.id})}}" role="button">Edit Account
-    Information &raquo;</a>
+<a class="btn btn-primary" href="{{urlFor('Account:edit', {'id': account.id})}}" role="button">
+    <i class="fa fa-pencil-square-o"></i> Edit this &raquo;</a>
 
 <button class="btn btn-danger" data-toggle="modal" data-target="#delete-confirmation">
-    Delete Account Information
+    <i class="fa fa-trash-o"></i> Delete this
 </button>
 
 <!-- Modal -->
@@ -22,8 +22,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <a class="btn btn-danger" href="{{urlFor('Account:delete', {'id': account.id})}}" role="button">Delete Account
-                    Information &raquo;</a>
+                <a class="btn btn-danger" href="{{urlFor('Account:delete', {'id': account.id})}}" role="button">
+                    <i class="fa fa-trash-o"></i> Delete Account Information &raquo;</a>
             </div>
         </div>
     </div>
@@ -34,45 +34,45 @@
 {% block content %}
 <div class="form-horizontal">
     <div class="form-group">
-        <label class="col-xs-2 control-label">Title</label>
+        <label class="col-sm-2 control-label">Title</label>
 
-        <div class="col-xs-4">
+        <div class="col-sm-4">
             {{account.title}}
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-xs-2 control-label">Description</label>
+        <label class="col-sm-2 control-label">Description</label>
 
-        <div class="col-xs-4">
+        <div class="col-sm-4">
             {{account.description}}
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-xs-2 control-label">Address</label>
+        <label class="col-sm-2 control-label">Address</label>
 
-        <div class="col-xs-4">
+        <div class="col-sm-4">
             {{account.url}}
         </div>
-        <div class="col-xs-4">
-            <a class="btn btn-default" href="{{account.url}}" role="button">Open website</a>
+        <div class="col-sm-4">
+            <a class="btn btn-default" href="{{account.url}}" role="button">Open website &raquo;</a>
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-xs-2 control-label">Username</label>
+        <label class="col-sm-2 control-label">Username</label>
 
-        <div class="col-xs-4">
+        <div class="col-sm-4">
             {{account.username}}
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-xs-2 control-label">Password</label>
+        <label class="col-sm-2 control-label">Password</label>
 
-        <div class="col-xs-4">
-            <a class="btn btn-default" href="#" id="view_password" role="button">View password &raquo;</a>
+        <div class="col-sm-4">
+            <a class="btn btn-default" href="#" id="view_password" role="button"><i class="fa fa-eye"></i> View password</a>
 
             <div id="password_plaintext">
                 <pre>{{account.password}}</pre>

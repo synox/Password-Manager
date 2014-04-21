@@ -11,6 +11,11 @@ use Valitron\Validator;
 class UserController extends ProtectedController {
 
     public function registerFormAction() {
+        if(Permission::isLoggedIn()) {
+            $this->app->flash('message', "You are already logged in.");
+            $this->app->redirect($this->app->urlFor("Account:index"));
+        }
+
         $this->app->view->appendData(array('form_errors' => array()));
         $this->app->view->appendData(array('username' => ''));
 
@@ -46,6 +51,12 @@ class UserController extends ProtectedController {
     }
 
     public function loginFormAction() {
+        if(Permission::isLoggedIn()) {
+            $this->app->flash('message', "You are already logged in.");
+            $this->app->redirect($this->app->urlFor("Account:index"));
+        }
+
+
         $this->app->view->appendData(array('form_errors' => array()));
 
         $this->app->render('user/login.html');
