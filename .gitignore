@@ -1,3 +1,4 @@
 web/cache/*
 *.log
 workspace.xml
+web/vendor
