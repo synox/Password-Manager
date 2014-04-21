@@ -80,9 +80,11 @@
                     <a href="{{urlFor('User:settings')}}" class="btn btn-default" role="button"><span
                             class="glyphicon glyphicon-cog"></span> Settings</a>
                     <a href="{{urlFor('User:logout')}}" class="btn btn-default" role="button"><span
-                            class="glyphicon glyphicon-log-out"></span> Logout {{username}} </a>
+                            class="glyphicon glyphicon-log-out"></span> Logout</a>
                 </div>
             </ul>
+            <p class="navbar-text navbar-right">Signed in as {{username}} </p>
+
             {% endif %}
         </div>
         <!--/.nav-collapse -->

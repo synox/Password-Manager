@@ -111,5 +111,23 @@ class AccountController extends ProtectedController {
         }
     }
 
+    public function deleteAction($account_id) {
+        $this->checkLogin();
+
+
+        if ($account_id == null) {
+            $this->app->notFound();
+        } else {
+            $persistence = new AccountPersistence($this->app->pdo);
+            $result = $persistence->delete($account_id, Permission::getUserid());
+            if(!$result) {
+                $this->app->notFound();
+            } else {
+                $this->app->flash("message", "Account was deleted.");
+                $this->app->redirect($this->app->urlFor("Account:index"));
+            }
+        }
+    }
+
 
 }

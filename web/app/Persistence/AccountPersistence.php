@@ -80,6 +80,14 @@ class AccountPersistence {
         return $account != null && $account->user_id == $user_id;
     }
 
+    public function delete($account_id, $user_id) {
+        $bind_values = array('account_id' => $account_id, 'user_id' => $user_id);
+
+        $sql = 'DELETE from account  ' .
+            'WHERE id = :account_id and user_id = :user_id LIMIT 1';
+        return $sth = $this->pdo->perform($sql, $bind_values);
+    }
+
 }
 
 ?>

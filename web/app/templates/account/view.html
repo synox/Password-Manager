@@ -2,8 +2,32 @@
 
 {% block jumbotron %}
 <p>{{account.title}}</p>
-<a class="btn btn-default" href="{{urlFor('Account:edit', {'id': account.id})}}" role="button">Edit Account
+<a class="btn btn-primary" href="{{urlFor('Account:edit', {'id': account.id})}}" role="button">Edit Account
     Information &raquo;</a>
+
+<button class="btn btn-danger" data-toggle="modal" data-target="#delete-confirmation">
+    Delete Account Information
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="delete-confirmation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Sure?</h4>
+            </div>
+            <div class="modal-body">
+                Do you really want to delete the account information for <strong>{{account.title}} ({{account.url}})</strong>?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <a class="btn btn-danger" href="{{urlFor('Account:delete', {'id': account.id})}}" role="button">Delete Account
+                    Information &raquo;</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
 
@@ -32,7 +56,7 @@
             {{account.url}}
         </div>
         <div class="col-xs-4">
-            <a class="btn btn-default" href="{{account.url}}" role="button">Open</a>
+            <a class="btn btn-default" href="{{account.url}}" role="button">Open website</a>
         </div>
     </div>
 

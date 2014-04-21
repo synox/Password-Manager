@@ -61,6 +61,7 @@ $app->addRoutes(array(
         '/register/'         => array('get'=> 'User:registerForm', 'post' => 'User:register'),
         '/account/'          => 'Account:index',
         '/account/new'       => 'Account:add',
+        '/account/:id/delete'=> 'Account:delete',
         '/account/:id/edit'  => 'Account:edit',
         '/account/:id'       => 'Account:view',
         '/pw'                => 'Pwgen:gen',
