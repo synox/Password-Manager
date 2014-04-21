@@ -26,6 +26,11 @@ $app = new \SlimController\Slim(array(
 
 ));
 
+$app->error(function (\Exception $e) use ($app) {
+    $app->render('error.html');
+});
+
+
 // connect database
 $app->pdo = new \Aura\Sql\ExtendedPdo('mysql:host=localhost;dbname=password-manager;charset=utf8', 'root', 'root');
 
