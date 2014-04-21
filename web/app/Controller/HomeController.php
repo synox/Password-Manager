@@ -2,12 +2,15 @@
 
 namespace PasswordManager\Controller;
 
+
+use PasswordManager\Permission;
+
 class HomeController extends \SlimController\SlimController {
 
     public function indexAction() {
-        // Sample log message
-        $this->app->log->info("Slim-Skeleton '/' route");
-        // Render index view
+        if(Permission::isLoggedIn()) {
+            $this->app->redirect($this->app->urlFor("Account:index"));
+        }
         $this->render('index.html');
     }
 }
