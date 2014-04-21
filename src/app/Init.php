@@ -22,7 +22,7 @@ $app = new \SlimController\Slim(array(
     'controller.method_suffix' => 'Action',
     'controller.template_suffix' => 'html',
     'mode' => 'production', 
-    'debug' => 'false'
+    'debug' => false
 
 ));
 
@@ -58,6 +58,7 @@ $app->notFound(function () use ($app) {
     $app->render('404.html');
 });
 $app->error(function (\Exception $e) use ($app) {
+    $app->log->error($e);
     $app->render('500.html');
 });
 
