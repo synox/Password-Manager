@@ -7,7 +7,7 @@ INSERT INTO account (id,user_id,title,url,password_cipher,username,description) 
 ;
 
 
-INSERT INTO `password-manager`.user (id,username,password_hash) VALUES 
+INSERT INTO user (id,username,password_hash) VALUES 
 (1,'demo','$2y$10$X2rpDFykc2RMEI6UX6klhOKKlK1q49pqy8jOA/6QHTlbzvl1puIrS')
 ,(18,'foo','$2y$10$TG0LzWfSycEWsOWn9kpiVOnD.srWRXrXChUbdym8h52UIfOUjqfMS')
 ;
