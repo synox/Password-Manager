@@ -1,4 +1,4 @@
-web/cache/*
+src/cache/*
 *.log
 workspace.xml
-web/vendor
+src/vendor
