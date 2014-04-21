@@ -21,6 +21,9 @@ $app = new \SlimController\Slim(array(
     'controller.class_suffix' => 'Controller',
     'controller.method_suffix' => 'Action',
     'controller.template_suffix' => 'html',
+    'mode' => 'production', 
+    'debug' => 'false'
+
 ));
 
 // connect database
