@@ -1,0 +1,1 @@
+Ziel des Projekt ist ist, eine Webapplikation für die sichere Passwortverwaltung zu erstellen. Dies wird erreicht, indem die Logins der Benutzer als Salted-Hash gespeichert werden. Die abgelegten Passwörter werden mit Rijndael (128 bit) verschlüsselt, als Key dient das Passwort des angemeldeten Benutzers. Dadurch kann niemand anderes die Passwörter entschlüsseln. 

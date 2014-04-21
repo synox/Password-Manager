@@ -1,7 +1,7 @@
 {
     "name": "winga1/password-manager",
     "description": "simple password manager",
-    "license": "CC0-1.0",
+    "license": "GPL-2.0+",
     "require": {
         "php": ">=5.3.0",
 
