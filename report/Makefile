@@ -1,3 +1,5 @@
+# This creates a pdf report (using latex). Pandoc (johnmacfarlane.net/pandoc/) required.
+
 ABSTRACT=`cat abstract.md`
 
 all: report
