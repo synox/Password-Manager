@@ -3,9 +3,17 @@
 
 namespace PasswordManager;
 
-
+/**
+ * Helper class for cryptographic functions.
+ * @package PasswordManager
+ */
 class Crypto {
 
+    /**
+     * Generates a list of passwords
+     * @param $count int number of passwords to generate
+     * @return array list of passwords
+     */
     static public function generatePasswords($count) {
         $result = array();
 
@@ -25,6 +33,12 @@ class Crypto {
         return $result;
     }
 
+    /**
+     * encrypts a string of information (base64 encoded)
+     * @param $information String
+     * @param $encryptionKey String
+     * @return string ciphertext
+     */
     public static function encryptInformation($information, $encryptionKey) {
         $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_OFB);
         $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND);
@@ -35,6 +49,12 @@ class Crypto {
         return base64_encode($cipherWithIv);
     }
 
+    /**
+     * decrypt a ciphertext string
+     * @param $cipherWithIvBase64 String the base64 encoded ciphertext including the IV.
+     * @param $encryptionKey String
+     * @return string decrypted plaintext
+     */
     public static function decryptInformation($cipherWithIvBase64, $encryptionKey) {
         $cipherWithIv = base64_decode($cipherWithIvBase64);
         $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_OFB);

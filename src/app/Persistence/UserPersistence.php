@@ -5,18 +5,34 @@ namespace PasswordManager\Persistence;
 
 use Aura\Sql\ExtendedPdo;
 
+/**
+ * Persistence class for user.
+ *
+ * There are methods for checking passwords.
+ * @package PasswordManager\Persistence
+ */
 class UserPersistence {
     private $pdo;
 
+    /**
+     * @param ExtendedPdo $pdo pdo to be used
+     */
     public function __construct(ExtendedPdo $pdo) {
         $this->pdo = $pdo;
     }
 
+
+    /**
+     * Checks if the given username and password belongs to a valid user.
+     * @param $username String username
+     * @param $password String password
+     * @return null|object null if invalid, else the valid user object.
+     */
     public function checkLogin($username, $password) {
         $user = $this->getByUsername($username);
 
         if ($user == null) {
-            return false;
+            return null;
         }
 
         // Compare password with hash
@@ -27,6 +43,11 @@ class UserPersistence {
         }
     }
 
+    /**
+     * loads the given user
+     * @param $username String username
+     * @return User the user instance or null
+     */
     public function getByUsername($username) {
         $sql = 'SELECT * from user WHERE username = :username ';
         $bind = array('username' => $username);
@@ -34,6 +55,12 @@ class UserPersistence {
         return $user;
     }
 
+    /**
+     * Creates the user
+     * @param $username String username
+     * @param $password String password
+     * @return bool false if user already exists.
+     */
     public function create($username, $password) {
         $user = $this->getByUsername($username);
         if ($user != null) {
@@ -44,6 +71,11 @@ class UserPersistence {
         return true;
     }
 
+    /**
+     * create a new user, with the given password hash
+     * @param $username String username
+     * @param $hash String password hash
+     */
     private function createUser($username, $hash) {
         $bind_values = array('username' => $username, 'password_hash' => $hash);
 
@@ -52,7 +84,12 @@ class UserPersistence {
         $sth = $this->pdo->perform($sql, $bind_values);
     }
 
-    public function setNewPassword($user_id, $password) {
+    /**
+     * changes the password for a user
+     * @param int $user_id user id
+     * @param String $password password (plaintext)
+     */
+    public function setNewPassword( $user_id,  $password) {
         $hash = password_hash($password, PASSWORD_DEFAULT);
 
         $bind_values = array('password_hash' => $hash, 'user_id' => $user_id);
