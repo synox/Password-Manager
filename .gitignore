@@ -4,3 +4,4 @@ workspace.xml
 src/vendor
 src/output
 src/public/.idea
+.idea
