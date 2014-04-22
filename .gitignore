@@ -2,3 +2,5 @@ src/cache/*
 *.log
 workspace.xml
 src/vendor
+src/output
+src/public/.idea

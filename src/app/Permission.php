@@ -46,4 +46,8 @@ class Permission {
         }
     }
 
+    public static function logout() {
+        session_unset();
+    }
+
 } 
