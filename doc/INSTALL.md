@@ -13,8 +13,8 @@ Installation:
 * Create a symlink from the ``htdocs`` to the ``public`` directory: `` ln -s /path/to/project/src/public /path/to/htdocs/password-manager`` 
 * Download dependencies: 
 
-	cd path/to/project/src
-	composer install
+		cd path/to/project/src
+		composer install
 * Create a database and import the files ``structure.sql`` and ``demo_data.sql``.  Change the database settings in ``app/Init.php``. 
 
 * Start apache and test if it works. e.g. http://localhost/password-manager/

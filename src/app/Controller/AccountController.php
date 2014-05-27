@@ -104,7 +104,7 @@ class AccountController extends ProtectedController {
                 $persistence->save(Permission::getUserid(), $account);
             }
 
-            $this->app->flash('message', "Account information have been saved.");
+            $this->app->flash('message', "Account information has been saved.");
             $this->app->redirect($this->app->urlFor("Account:index"));
         } else {
             // Show validation errors
