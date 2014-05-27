@@ -1,4 +1,9 @@
 <?
+/*
+ * Initializes the Controllers, the routing and the template framework.
+ */
+
+// everything is utf8
 mb_internal_encoding('UTF-8');
 mb_http_output('UTF-8');
 
@@ -8,9 +13,10 @@ session_start();
 define('APP_PATH', dirname(__DIR__)); // PHP v5.3+
 
 
-// Report all PHP errors (see changelog)
+// Report all PHP errors
 error_reporting(E_ALL);
 
+// auto-load dependencies
 require APP_PATH . '/vendor/autoload.php';
 
 
@@ -39,7 +45,7 @@ $app->container->singleton('log', function () {
     return $log;
 });
 
-// Prepare view
+// Prepare view framework
 $app->view(new \Slim\Views\Twig());
 $app->view->parserOptions = array(
     'charset' => 'utf-8',
@@ -50,10 +56,12 @@ $app->view->parserOptions = array(
 );
 $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 
+// some variables are available to all views:
 $app->view->appendData(array('loggedin' => \PasswordManager\Permission::isLoggedin()));
 $app->view->appendData(array('username' => \PasswordManager\Permission::getUsername()));
 $app->view->appendData(array('router' => $app->router));
 
+// setup not-found and error pages
 $app->notFound(function () use ($app) {
     $app->render('404.html');
 });
@@ -62,7 +70,7 @@ $app->error(function (\Exception $e) use ($app) {
     $app->render('500.html');
 });
 
-
+// all routes
 $app->addRoutes(array(
         '/'                  => 'Home:index',
         '/logout'            => 'User:logout',

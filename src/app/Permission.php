@@ -3,7 +3,10 @@
 
 namespace PasswordManager;
 
-
+/**
+ * Class for checking the user permission. It contains static methods that manage the user state in the session.
+ * @package PasswordManager
+ */
 class Permission {
     public static function isLoggedIn() {
         return isset($_SESSION['pm.user_id']) && !is_null($_SESSION['pm.user_id']);
