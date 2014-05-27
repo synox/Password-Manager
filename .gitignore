@@ -1,5 +1,4 @@
 src/cache/*
-src/vendor
 src/.idea
 *.log
 workspace.xml
