@@ -1,4 +1,5 @@
 src/cache/*
+src/vendor
 *.log
 workspace.xml
 src/output
