@@ -14,9 +14,6 @@
         "vlucas/valitron": "dev-master",
         "ircmaxell/password-compat": "dev-master"
     },
-    "require-dev": {
-        "phpdocumentor/phpdocumentor": "2.*"
-    },
     "autoload": {
         "psr-4": {
             "PasswordManager\\": "app"
