@@ -5,3 +5,5 @@ src/vendor
 src/output
 src/public/.idea
 .idea
+*.sublime-project
+*.sublime-workspace
