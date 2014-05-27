@@ -27,10 +27,14 @@
 - db setup 2
 - html & design setup 2
 
-## Pakete
+## Arbeits-Pakete
+Aufwand in Stunden: 
+
 - crypto lib: 2h
 - db setup: 2h
 - html & design: 2h
 - register & login: 2h
 - list, create: 2.5h
 - edit, delete: 2.5h
+- Test, security testing: 3h
+- Report: 4h
