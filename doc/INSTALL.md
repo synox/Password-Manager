@@ -15,7 +15,7 @@ Installation:
 
 		cd path/to/project/src
 		composer install
-* Create a database and import the files ``structure.sql`` and ``demo_data.sql``.  Change the database settings in ``app/Init.php``. 
+* Create a database and import the files ``structure.sql`` and ``demo_data.sql`` (see directory ``sql``).  Change the database settings in ``app/Init.php``. 
 
 * Start apache and test if it works. e.g. http://localhost/password-manager/
 
